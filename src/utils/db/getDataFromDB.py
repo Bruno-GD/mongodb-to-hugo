@@ -22,24 +22,24 @@ def getDataFromDB() -> Tuple[list, Dict[str, Collection]]:
     assert MONGO_URI != None,   'MONGO_URI env var not set'
     assert MONGO_DB != None,    'MONGO_DB env var not set'
 
-    checkMongoURI(MONGO_URI)
+    checkMongoURI(MONGO_URI) # warn srv usage
 
     # logic
-    collections = list()
-    collectionsData = dict()
+    collectionNames = list()
+    collections = dict()
     try:
         with MongoClient(MONGO_URI) as CLIENT:
-            DB = CLIENT.get_database(MONGO_DB)              # get db instance
-            collections = DB.list_collection_names()        # get all collections inside db
+            DB = CLIENT.get_database(MONGO_DB)                  # get db instance
+            collectionNames = DB.list_collection_names()        # get all collections inside db
 
-            for collection in collections:
-                collectionsData[collection] = DB.get_collection(collection)
+            for collection in collectionNames:
+                collections[collection] = DB.get_collection(collection)
         # should close CLIENT connection
     except Exception as e:
         LOGGER.error('Something went wrong at : %s', e)
     finally:
         # postcondition
-        assert isinstance(collections, list),       'collections no es lista'
-        assert isinstance(collectionsData, dict),   'collectionsData no es dict'
+        assert isinstance(collectionNames, list),       'collections no es lista'
+        assert isinstance(collections, dict),           'collectionsData no es dict'
 
-        return collections, collectionsData
+        return collectionNames, collections
