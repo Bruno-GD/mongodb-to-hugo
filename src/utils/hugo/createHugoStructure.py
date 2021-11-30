@@ -1,8 +1,8 @@
 from os import getcwd, mkdir
-from os.path import isdir, join
-from shutil import rmtree
+from os.path import join
+from .checkFolderStructure import HUGO_STRUCTURE
 
-def createHugoStructure(hugoDir: str, sections: list, *, force: bool = False) -> None:
+def createHugoStructure(hugoDir: str = join(getcwd(), 'site')) -> None:
     """
     Creates a new Hugo structure at `hugoDir`
     """
@@ -11,20 +11,6 @@ def createHugoStructure(hugoDir: str, sections: list, *, force: bool = False) ->
     assert isinstance(hugoDir, str)
 
     # logic
-
-    if force and isdir(hugoDir):
-        rmtree(hugoDir)
-        mkdir(hugoDir)
-    elif not isdir(hugoDir):
-        mkdir(hugoDir)
-
-    contentDir = join(hugoDir, 'content')
-    mkdir(contentDir)
-    for section in sections:
-        sectionDir = join(contentDir, section)
-
-        if not isdir(sectionDir):
-            mkdir(sectionDir)
-
-        with open(join(sectionDir, 'index.md'), 'w', encoding='utf8') as file:
-            file.write('')
+    for path in HUGO_STRUCTURE:
+        fullpath = join(hugoDir, path)
+        mkdir(fullpath)
