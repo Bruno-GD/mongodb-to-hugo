@@ -1,11 +1,12 @@
 from os.path import join
 from os import getcwd
 
-from src.utils.hugo.createHugoStructure import createHugoStructure
+from .utils.hugo.checkHugoCommand       import isHugoAvailable
+from .utils.hugo.createHugoStructure    import createHugoStructure
+from .utils.hugo.checkFolderStructure   import isFolderStructure
+from .utils.hugo.runHugoStructure       import runHugoStructure
 
-from .utils.hugo.checkFolderStructure import isFolderStructure
-
-def generateSite(sections: list, elements: dict, *, outputFolder: str = join(getcwd(), "content")) -> None:
+def generateSite(sections: list, elements: dict, *, outputFolder: str = join(getcwd(), "site")) -> None:
     """
     Generate site from a list of sections and
     populate with elements inside of each section
@@ -18,7 +19,10 @@ def generateSite(sections: list, elements: dict, *, outputFolder: str = join(get
 
     # logic
     if not isFolderStructure(outputFolder):
-        createHugoStructure(outputFolder, sections)
+        if isHugoAvailable():
+            runHugoStructure(outputFolder)
+        else:
+            createHugoStructure(outputFolder, sections)
 
 
 if __name__ == '__main__':
