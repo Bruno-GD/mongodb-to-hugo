@@ -1,10 +1,12 @@
-from os.path import join
-from os import getcwd
+from os import getcwd, mkdir
+from os.path import join, isdir
+from shutil import rmtree
 
-from .utils.hugo.checkHugoCommand       import isHugoAvailable
-from .utils.hugo.createHugoStructure    import createHugoStructure
-from .utils.hugo.checkFolderStructure   import isFolderStructure
-from .utils.hugo.runHugoStructure       import runHugoStructure
+from .utils.hugo.checkFolderStructure import isFolderStructure
+from .utils.hugo.checkHugoCommand import isHugoAvailable
+from .utils.hugo.createHugoStructure import createHugoStructure
+from .utils.hugo.populateContents import populateContents
+from .utils.hugo.runHugoStructure import runHugoStructure
 
 def generateSite(sections: list, elements: dict, *, outputFolder: str = join(getcwd(), "site")) -> None:
     """
@@ -18,11 +20,18 @@ def generateSite(sections: list, elements: dict, *, outputFolder: str = join(get
     assert isinstance(outputFolder, str)
 
     # logic
-    if not isFolderStructure(outputFolder):
-        if isHugoAvailable():
-            runHugoStructure(outputFolder)
-        else:
-            createHugoStructure(outputFolder, sections)
+    if isdir(outputFolder):
+        rmtree(outputFolder)
+        mkdir(outputFolder)
+
+    if isHugoAvailable():
+        runHugoStructure(outputFolder)
+    else:
+        createHugoStructure(outputFolder)
+
+    assert isFolderStructure(outputFolder), 'bad folder structure for Hugo'
+
+    populateContents(outputFolder, sections, elements)
 
 
 if __name__ == '__main__':
