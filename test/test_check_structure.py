@@ -9,4 +9,4 @@ LOGGER = gL(__name__)
 @pytest.mark.folder_structure
 def test_folder_structure():
     LOGGER.info('checking folder structure')
-    assert isFolderStructure(join(getcwd(), 'content')) == True
+    assert isFolderStructure('site') == True
