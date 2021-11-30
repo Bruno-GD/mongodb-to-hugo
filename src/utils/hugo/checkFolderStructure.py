@@ -2,10 +2,8 @@
 from logging import getLogger as gL
 LOGGER = gL(__name__)
 # python native
-from os.path import isdir as dirExists, isfile as fileExists, join
+from os.path import isdir as dirExists, join
 from os import getcwd
-# this module
-from .createHugoStructure import createHugoStructure
 
 HUGO_STRUCTURE = [
     'archetypes',
@@ -13,13 +11,12 @@ HUGO_STRUCTURE = [
     'data',
     'layouts',
     'static',
-    'themes',
-    'config.toml'
+    'themes'
 ]
 
 def isFolderStructure(hugoContent: str) -> bool:
     """
-    check if hugoContent folder exists
+    check if Hugo structure is correct
     """
 
     # precondition
@@ -28,7 +25,7 @@ def isFolderStructure(hugoContent: str) -> bool:
     # logic
     for path in HUGO_STRUCTURE:
         fullpath = join(getcwd(), hugoContent, path)
-        if not dirExists(fullpath) and not fileExists(fullpath):
+        if not dirExists(fullpath):
             return False
 
     return True
