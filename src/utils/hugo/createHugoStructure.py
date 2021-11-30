@@ -18,8 +18,10 @@ def createHugoStructure(hugoDir: str, sections: list, *, force: bool = False) ->
     elif not isdir(hugoDir):
         mkdir(hugoDir)
 
+    contentDir = join(hugoDir, 'content')
+    mkdir(contentDir)
     for section in sections:
-        sectionDir = join(hugoDir, section)
+        sectionDir = join(contentDir, section)
 
         if not isdir(sectionDir):
             mkdir(sectionDir)
