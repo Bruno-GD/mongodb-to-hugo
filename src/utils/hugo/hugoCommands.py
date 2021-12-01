@@ -3,7 +3,7 @@ from os import system as runCommand
 from logging import getLogger as gL
 LOGGER = gL(__name__)
 
-def runHugoStructure(hugoFolder: str) -> None:
+def startHugoSite(hugoFolder: str) -> None:
     """
     Run Hugo command to create a new site folder
     """
