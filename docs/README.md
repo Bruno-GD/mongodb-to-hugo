@@ -1,3 +1,5 @@
+![](assets/Cabecera_Logo.png)
+
 # Docs
 
 Carpeta contenedora de documentaciones importantes del repositorio / proyecto.
