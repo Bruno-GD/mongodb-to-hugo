@@ -1,10 +1,23 @@
 from os import mkdir as createFolder
 from os.path import join
 
-DEFAULT_MD = \
+FORMATABLE_MD = \
 """---
-title: %s
----"""
+name: {name}
+location: {location}
+price: {price}
+capacity: {capacity}
+---
+
+# Menú
+"""
+
+MENU_MD = \
+"""## {menuName}
+1. {first}
+2. {second}
+3. {desert}
+"""
 
 def populateContents(hugoDir: str, sections: list, elements: dict) -> None:
     """
@@ -20,5 +33,9 @@ def populateContents(hugoDir: str, sections: list, elements: dict) -> None:
     for section in sections:
         sectionPath = join(hugoDir, 'content', section)
         createFolder(sectionPath)
-        with open(join(sectionPath, 'index.md'), 'w') as f:
-            f.write(DEFAULT_MD % section)
+        contents = list(elements[section].find({}))
+        for content in contents:
+            with open(join(sectionPath, content['name'] + '.md'), 'w') as f:
+                f.write(FORMATABLE_MD.format(**content))
+                for menu in content['menu']:
+                    f.write(MENU_MD.format(**menu))

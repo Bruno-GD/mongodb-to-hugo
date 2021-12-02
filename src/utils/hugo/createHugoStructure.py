@@ -1,6 +1,9 @@
 from os import getcwd, mkdir
 from os.path import join
-from .checkFolderStructure import HUGO_STRUCTURE
+
+from .checkHugoCommand import isHugoAvailable
+from .hugoCommands import startHugoSite
+from .checkFolderStructure import HUGO_STRUCTURE, isFolderStructure
 
 def createHugoStructure(hugoDir: str = join(getcwd(), 'site')) -> None:
     """
@@ -11,6 +14,12 @@ def createHugoStructure(hugoDir: str = join(getcwd(), 'site')) -> None:
     assert isinstance(hugoDir, str)
 
     # logic
-    for path in HUGO_STRUCTURE:
-        fullpath = join(hugoDir, path)
-        mkdir(fullpath)
+    if isHugoAvailable():
+        startHugoSite(hugoDir)
+    else:
+        for path in HUGO_STRUCTURE:
+            fullpath = join(hugoDir, path)
+            mkdir(fullpath)
+
+    # postcondition
+    assert isFolderStructure(hugoDir)
