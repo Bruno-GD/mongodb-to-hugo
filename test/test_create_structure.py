@@ -1,5 +1,5 @@
 from src.utils.hugo.createHugoStructure import createHugoStructure
-from src.utils.hugo.runHugoStructure import runHugoStructure
+from src.utils.hugo.hugoCommands import startHugoSite
 from os.path import join
 from os import getcwd
 # pytest
@@ -24,4 +24,4 @@ def test_create_structure_force():
 def test_create_structure_with_hugo():
     hugoFolder = join(getcwd(), 'site')
     LOGGER.info('create structure with Hugo command')
-    runHugoStructure(hugoFolder)
+    startHugoSite(hugoFolder)
