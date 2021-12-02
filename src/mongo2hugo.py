@@ -27,12 +27,3 @@ def generateSite(sections: list, elements: dict, *, outputFolder: str = join(get
 
     # postcondition
     assert isFolderStructure(outputFolder)
-
-
-if __name__ == '__main__':
-    # collect data from MongoDB
-    from .utils.db.getDataFromDB import getDataFromDB
-    sections, elements = getDataFromDB()
-
-    # generate site with collected data
-    generateSite(sections, elements)
