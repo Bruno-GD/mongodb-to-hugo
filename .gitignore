@@ -1,5 +1,5 @@
 # site generation
-site/
+site/content
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
