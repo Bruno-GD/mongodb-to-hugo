@@ -4,7 +4,7 @@
 Generador estático web con Hugo + MongoDB + Python
 
 # Índice
-
+<!-- Poner índice -->
 # Introducción
 
 En este proyecto tendremos que actualizar una web de una empresa de menus de restaurantes de lujo. La página web contine listas de cartas de restaurentes (ítems) que están en stock, en las cuales estas se clasifican en diferentes estilo de cocina.
@@ -22,45 +22,20 @@ Requisitos:
 - Documentar el manual técnico que descrbe la arquitectura de la aplicación.
 
 ### Metodología
-Explicar metodologia aplicada y sus fases
-
-<!-- 
-Scrum se basa en la teoría de control de procesos empírica o empirismo. El
-empirismo asegura que el conocimiento procede de la experiencia y de tomar decisiones
-basándose en lo que se conoce. Scrum emplea un enfoque iterativo e incremental para
-optimizar la predictibilidad y el control del riesgo.
-Los aspectos significativos del proceso deben ser visibles para aquellos que son
-responsables del resultado. La transparencia requiere que dichos aspectos sean definidos
-por un estándar común, de tal modo que los observadores compartan un entendimiento
-común de lo que se está viendo.
 
 
-Etapas:
+La metodología que hemos aplicado en el proyeto es la de scrum. En ella se basa en en la teoría de control de procesos empírica o empirismo. El empirismo asegura que el conocimiento procede de la experiencia y de tomar decisiones basándose en lo que se conoce. Scrum emplea un enfoque iterativo e incremental para optimizar la predictibilidad y el control del riesgo. Los aspectos significativos del proceso deben ser visibles para aquellos que son responsables del resultado. La transparencia requiere que dichos aspectos sean definidos por un estándar común, de tal modo que los observadores compartan un entendimiento común de lo que se está viendo.
+
+Esta metodología está formada por 5 etapas que son:
 1. Inicio
 2. Planificación y estimación
 3. Implementación
 4. Revisión y retrospectiva
 5. Lanzamiento
 
-En conclusión
+![](docs/assets/principios_Metodologia_Scrum.png)
 
-En conclusión, la metodología Scrum es una metodología ágil que hace énfasis en el
-trabajo en equipo donde la claridad de los objetivos es crucial para avanzar hacia una
-versión cada vez mejor.
-Desde el punto de vista humano, favorece la motivación, la creatividad y el
-compromiso del equipo de trabajo. La claridad de los objetivos de cada una de las tareas
-programadas, así como el registro diario de las novedades, son factores que generan
-propuestas de avance hacia una versión mejorada. Estos factores, por supuesto, se reflejan
-positivamente en los niveles de producción de la empresa.
-Sin embargo el scrum no es muy efectivo si se hacen con grupos muy ampliados ya
-que se puede ir de las manos y tardar más de lo necesario. A eso, también, hay que
-añadirle que se tiene que trabajar con metas por días o semanales o mensuales y por
-etapas para poder llegar a los plazos y eso se necesita mucha organización. Asimismo es
-importante que las personas que hagan esta metodología tengan un gran nivel de
-cualificación para poder realizarla correctamente.
-En definitiva, el scrum si se hace bien es muy efectivo pero requiere un alto nivel de
-implicación.
- -->
+Para finalizar podemos decir que la metodología Scrum es una metodología ágil que hace énfasis en el trabajo en equipo donde la claridad de los objetivos es crucial para avanzar hacia una versión cada vez mejor. Desde el punto de vista humano, favorece la motivación, la creatividad y el compromiso del equipo de trabajo. La claridad de los objetivos de cada una de las tareas programadas, así como el registro diario de las novedades, son factores que generan propuestas de avance hacia una versión mejorada. Estos factores, por supuesto, se reflejan positivamente en los niveles de producción de la empresa. Sin embargo el scrum no es muy efectivo si se hacen con grupos muy ampliados ya que se puede ir de las manos y tardar más de lo necesario. A eso, también, hay que añadirle que se tiene que trabajar con metas por días o semanales o mensuales y por etapas para poder llegar a los plazos y eso se necesita mucha organización. Asimismo es importante que las personas que hagan esta metodología tengan un gran nivel de cualificación para poder realizarla correctamente. En definitiva, el scrum si se hace bien es muy efectivo pero requiere un alto nivel de implicación.
 
 ### Analisis
 - Partes interesadas
@@ -101,8 +76,12 @@ implicación.
 
 Scrum:
 
--
+- [Scrum de “Wikipedia”](https://es.wikipedia.org/wiki/Scrum_(desarrollo_de_software))
+- [Metodolgia Scrum de “Softeng”](https://www.softeng.es/ca-es/empresa/metodologies-de-treball/metodologia-scrum.html)
+- [Scrum de “Atlassian”](https://www.atlassian.com/es/agile/scrum)
+- [Ventajas y desventajas Scrum de "Waredrew"](https://blog.wearedrew.co/ventajas-y-desventajas-de-la-metodologia-scrum)
+
 
 Hugo:
 
--
+- [Introducción de hugo](https://gohugo.io/getting-started/quick-start/)
