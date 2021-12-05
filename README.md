@@ -2,9 +2,9 @@
 ![](docs/assets/logoMopygo.png)
 
 # Índice
-- [Introducción](#Introducción)
-- [Instalación](#Instalación)
-- [Licencia](#Licencia)
+- [Introducción](#-1)
+- [Instalación](#-2)
+- [Licencia](#-)
 
 <!-- # ✨ Introducción -->
 
@@ -17,6 +17,6 @@ Este proyecto nos permite conectarnos a una base de datos en [Mongo Atlas](https
 <h1><img src="docs/assets/instalacion.png" width="200px" /></h1>
 
 <!-- 📄 Licencia -->
-<h1><img src="docs/assets/licencia.png" width="200px" /></h1>
+<h1> <img src="docs/assets/licencia.png" width="200px" /></h1>
 
 <!-- # Bibliografía -->
