@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 ![](assets/Cabecera_Logo.png)
-=======
-![](docs/assets/Cabecera_Logo.png)
->>>>>>> 26d51f48c4a7eba5c22eb53371f77c645c33957e
-
-# mongodb-to-hugo
-Generador estático web con Hugo + MongoDB + Python
+![](assets/logoMopygo.png)
 
 # Índice
 <!-- Poner índice -->
