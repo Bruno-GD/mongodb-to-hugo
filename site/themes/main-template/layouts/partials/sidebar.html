@@ -9,7 +9,7 @@
         <li><a href="{{ absURL .url }}">{{ .name }}</a>
           <ul>
           {{ range .Site.Sections }}
-            <li>{{ .Title }}</li>
+            <li>{{ . }}</li>
           {{ end }}
           </ul>
         </li>
