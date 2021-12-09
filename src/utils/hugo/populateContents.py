@@ -9,14 +9,18 @@ price: {price}
 capacity: {capacity}
 ---
 
-# Menú
+
 """
 
 MENU_MD = \
 """## {menuName}
-1. {first}
-2. {second}
-3. {desert}
+* Primer plato
+    #### {first}
+* Segundo plato
+    #### {second}
+* Postre
+    #### {desert}
+
 """
 
 def populateContents(hugoDir: str, sections: list, elements: dict) -> None:
@@ -31,7 +35,7 @@ def populateContents(hugoDir: str, sections: list, elements: dict) -> None:
 
     # logic
     for section in sections:
-        sectionPath = join(hugoDir, 'content', section)
+        sectionPath = join(hugoDir, 'content/portfolio', section)
         createFolder(sectionPath)
         contents = list(elements[section].find({}))
         for content in contents:
