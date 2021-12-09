@@ -1,7 +1,9 @@
 from .checkHugoCommand import isHugoAvailable
 from os import system as runCommand
 from logging import getLogger as gL
+
 LOGGER = gL(__name__)
+
 
 def startHugoSite(hugoFolder: str) -> None:
     """
@@ -9,10 +11,10 @@ def startHugoSite(hugoFolder: str) -> None:
     """
 
     # precondition
-    assert isinstance(hugoFolder, str), 'hugoFolder no es un string'
+    assert isinstance(hugoFolder, str), "hugoFolder no es un string"
 
     # logic
     if isHugoAvailable():
         LOGGER.info("Running Hugo: %s", runCommand("hugo new site %s" % hugoFolder))
     else:
-        LOGGER.error('Hugo command not available')
+        LOGGER.error("Hugo command not available")
