@@ -3,6 +3,7 @@
 
 # site generation
 site/content/portfolio
+site/public
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
