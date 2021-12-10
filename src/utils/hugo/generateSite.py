@@ -8,7 +8,7 @@ from .clearHugoContent import clearHugoContent
 
 
 def generateSite(
-    sections: list, elements: dict, *, outputFolder: str = join(getcwd(), "site")
+    sections: list, elements: dict, *, insideFolder: str, outputFolder: str = join(getcwd(), "site")
 ) -> None:
     """
     Generate site from a list of sections and
@@ -22,11 +22,11 @@ def generateSite(
 
     # logic
     if isdir(outputFolder):
-        clearHugoContent(outputFolder)
+        clearHugoContent(outputFolder, insideContent=insideFolder)
     else:
         createHugoStructure(outputFolder)
 
-    populateContents(outputFolder, sections, elements)
+    populateContents(outputFolder, sections, elements, insideContent=insideFolder)
 
     # postcondition
     assert isFolderStructure(outputFolder)
