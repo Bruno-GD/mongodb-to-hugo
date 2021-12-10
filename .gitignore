@@ -2,7 +2,7 @@
 **/.DS_Store
 
 # site generation
-site/content/portfolio
+site/content
 site/public
 
 # Byte-compiled / optimized / DLL files

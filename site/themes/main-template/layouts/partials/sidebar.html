@@ -7,11 +7,6 @@
     <ul class="sidebar-menu">
       {{ range .Site.Params.navlinks }}
         <li><a href="{{ absURL .url }}">{{ .name }}</a>
-          <ul>
-          {{ range .Site.Sections }}
-            <li>{{ . }}</li>
-          {{ end }}
-          </ul>
         </li>
       {{ end }}
     </ul>
