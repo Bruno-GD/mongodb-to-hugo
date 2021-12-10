@@ -1,32 +1,15 @@
-from os import getcwd
-from os.path import join, isdir
+from .utils.hugo.generateSite import generateSite
+from .utils.db.getDataFromDB import getDataFromDB
 
-from .utils.hugo.checkFolderStructure import isFolderStructure
-from .utils.hugo.createHugoStructure import createHugoStructure
-from .utils.hugo.populateContents import populateContents
-from .utils.hugo.clearHugoContent import clearHugoContent
-
-
-def generateSite(
-    sections: list, elements: dict, *, outputFolder: str = join(getcwd(), "site")
-) -> None:
+def main(*args):
     """
-    Generate site from a list of sections and
-    populate with elements inside of each section
+    MoPyGo main function.
+    Retreive data from DB and generate site.
     """
 
-    # preconditions
-    assert isinstance(sections, list)
-    assert isinstance(elements, dict)
-    assert isinstance(outputFolder, str)
+    sections, contentOfSections = getDataFromDB()
 
-    # logic
-    if isdir(outputFolder):
-        clearHugoContent(outputFolder)
-    else:
-        createHugoStructure(outputFolder)
+    generateSite(sections, contentOfSections)
 
-    populateContents(outputFolder, sections, elements)
-
-    # postcondition
-    assert isFolderStructure(outputFolder)
+if __name__ == '__main__':
+    main()
