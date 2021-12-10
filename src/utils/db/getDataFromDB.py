@@ -1,10 +1,10 @@
 # python native modules
 from os import getenv as getEnvironmentVariable
-from typing import Tuple, Dict
 
 # pymongo imports
 from pymongo import MongoClient
 from pymongo.collection import Collection
+from pymongo.errors import InvalidName
 
 # pytest logging
 from logging import getLogger as gL
@@ -14,13 +14,12 @@ LOGGER = gL(__name__)
 from .checkMongoURI import checkMongoURI
 
 
-def getDataFromDB() -> Tuple[list, Dict[str, Collection]]:
+def getDataFromDB(
+    MONGO_URI: str = getEnvironmentVariable("MONGO_URI"), MONGO_DB: str = getEnvironmentVariable("MONGO_DB")
+) -> tuple[list[dict], dict[str, list]]:
     """
     Retreive collections and documents
     """
-
-    MONGO_URI = getEnvironmentVariable("MONGO_URI")
-    MONGO_DB = getEnvironmentVariable("MONGO_DB")
 
     # precondition
     assert MONGO_URI != None, "MONGO_URI env var not set"
@@ -34,12 +33,18 @@ def getDataFromDB() -> Tuple[list, Dict[str, Collection]]:
     try:
         with MongoClient(MONGO_URI) as CLIENT:
             DB = CLIENT.get_database(MONGO_DB)  # get db instance
-            collectionNames = (
-                DB.list_collection_names()
-            )  # get all collections inside db
+            TYPES_COLLECTION = DB.get_collection('types') # get collection instance of 'types'
+            collectionNames = list(TYPES_COLLECTION.find({}))
 
-            for collection in collectionNames:
-                collections[collection] = DB.get_collection(collection)
+            for collectionName in collectionNames:
+                try:
+                    collection = DB.get_collection(collectionName)
+                except InvalidName:
+                    LOGGER.warn("The collection %s doesn't exist and it's on 'types' collection", collectionName)
+                except Exception as error:
+                    LOGGER.warn("Error getting collection %s", error.with_traceback())
+                else:
+                    collections[collectionName] = list(collection.find({}))
         # should close CLIENT connection
     except Exception as e:
         LOGGER.error("Something went wrong at : %s", e)
