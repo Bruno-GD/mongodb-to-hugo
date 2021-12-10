@@ -8,7 +8,7 @@ from .clearHugoContent import clearHugoContent
 
 
 def generateSite(
-    sections: list, elements: dict, *, insideFolder: str, outputFolder: str = join(getcwd(), "site")
+    sections: list, elements: dict, *args, insideFolder: str = "", outputFolder: str = join(getcwd(), "site"), **kwargs
 ) -> None:
     """
     Generate site from a list of sections and

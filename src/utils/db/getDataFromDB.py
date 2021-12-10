@@ -15,7 +15,7 @@ from .checkMongoURI import checkMongoURI
 
 
 def getDataFromDB(
-    MONGO_URI: str = getEnvironmentVariable("MONGO_URI"), MONGO_DB: str = getEnvironmentVariable("MONGO_DB")
+    MONGO_URI: str = getEnvironmentVariable("MONGO_URI"), MONGO_DB: str = getEnvironmentVariable("MONGO_DB"), *args, **kwargs
 ) -> tuple[list[dict], dict[str, list]]:
     """
     Retreive collections and documents
