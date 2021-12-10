@@ -9,7 +9,7 @@ from logging import getLogger as gL
 LOGGER = gL(__name__)
 
 
-def clearHugoContent(hugoDir: str = join(getcwd(), "site")) -> None:
+def clearHugoContent(hugoDir: str = join(getcwd(), "site"), *, insideContent: str = "") -> None:
     """
     Clear Hugo /content folder
     """
@@ -18,7 +18,7 @@ def clearHugoContent(hugoDir: str = join(getcwd(), "site")) -> None:
     assert isinstance(hugoDir, str)
 
     # logic
-    hugoContentPath = join(hugoDir, "content")
+    hugoContentPath = join(hugoDir, "content", insideContent)
     if isdir(hugoDir) and isdir(hugoContentPath):
         rmtree(hugoContentPath)
         LOGGER.info("removed %s", hugoContentPath)
