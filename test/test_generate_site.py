@@ -1,5 +1,5 @@
 import pytest
-from src.mongo2hugo import generateSite
+from src.utils.hugo.generateSite import generateSite
 
 @pytest.mark.generate_site_sample
 def test_generate_site():
