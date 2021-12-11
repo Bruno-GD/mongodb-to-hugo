@@ -22,8 +22,8 @@ def getDataFromDB(
     """
 
     # precondition
-    assert MONGO_URI != None, "MONGO_URI env var not set"
-    assert MONGO_DB != None, "MONGO_DB env var not set"
+    assert isinstance(MONGO_URI,str), "MONGO_URI env var not set"
+    assert isinstance(MONGO_DB,str), "MONGO_DB env var not set"
 
     checkMongoURI(MONGO_URI)  # warn srv usage
 
@@ -38,13 +38,13 @@ def getDataFromDB(
 
             for collectionName in collectionNames:
                 try:
-                    collection = DB.get_collection(collectionName)
+                    collection = DB.get_collection(collectionName['name'])
                 except InvalidName:
                     LOGGER.warn("The collection %s doesn't exist and it's on 'types' collection", collectionName)
                 except Exception as error:
                     LOGGER.warn("Error getting collection %s", error.with_traceback())
                 else:
-                    collections[collectionName] = list(collection.find({}))
+                    collections[collectionName['name']] = list(collection.find({}))
         # should close CLIENT connection
     except Exception as e:
         LOGGER.error("Something went wrong at : %s", e)
