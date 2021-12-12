@@ -1,21 +1,12 @@
 +++
 date = "2016-11-05T21:05:33+05:30"
-title = "About me"
+title = "About us"
 +++
 
-An sincerity so extremity he additions. Her yet **there truth merit**. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.
+LUX FOOD es la aplicación que te permite obtener los mejores productos de tu ciudad en pocos minutos. Conectamos a usuarios, empresas y mensajeros para hacerlo posible. El proyecto nació con el objetivo de transformar la forma en que los usuarios adquieren lo que necesitan, haciendo las ciudades más accesibles. En LUX FOOD queremos que todo el mundo tenga fácil acceso a cualquier cosa en su ciudad, teniendo un impacto sostenible en la economía, la sociedad y el medio ambiente: somos una empresa responsable de la tecnología.
+## Nuestra historia
 
-Received overcame oh sensible so at an. Formed do change merely to county it. **Am separate contempt** domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too. Replied exposed savings he no viewing as up. Soon body add him hill. No father living really people estate if. Mistake do produce beloved demesne if am pursuit.
+#### De Mallorca al mundo. LUX FOOD es la aplicación que te permite obtener los mejores productos de tu ciudad.
 
-![This is me][1]
+LUX FOOD fue lanzado a principios de 2015 por Oscar Pierre y Sacha Michaud. Oscar, después de estudiar en Georgia Tech y ver la economía emergente bajo demanda en los EE. UU., Regresó a su ciudad natal de Mallorca para comenzar su propia empresa, donde conoció a Sacha, un experimentado emprendedor tecnológico. Desde entonces, LUX FOOD se ha lanzado en 23 países y más de 900 ciudades en todo el mundo. Hoy en día, es la plataforma bajo demanda más grande fundada fuera de Europa continental, con más de 255 millones de pedidos
 
-The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn't listen. She packed her seven versalia, put her initial into the belt and made herself on the way.
-
-#### Education
-
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-
-When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then
-
-[1]: /img/about.jpg

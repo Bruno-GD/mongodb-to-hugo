@@ -1,5 +1,5 @@
 baseurl = "http://127.0.0.1:5500/site/public/"
-title = "🥝COMIDA REDONDA🍉"
+title = "LUX FOOD"
 theme = "main-template"
 languageCode = "en-us"
 # Enable comments by entering your Disqus shortname
@@ -47,11 +47,11 @@ googleAnalytics = ""
   home = true
 
   [[params.navlinks]]
-  name = "About"
+  name = "About us"
   url = "about/"
 
   [[params.navlinks]]
-  name = "Get in touch"
+  name = "Modificación de datos"
   url = "contact/"
 
   [params.social]
