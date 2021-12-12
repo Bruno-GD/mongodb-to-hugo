@@ -1,5 +1,6 @@
 # python native modules
 from os import getenv as getEnvironmentVariable
+from typing import Dict, List, Tuple
 
 # pymongo imports
 from pymongo import MongoClient
@@ -16,12 +17,13 @@ from .checkMongoURI import checkMongoURI
 
 def getDataFromDB(
     MONGO_URI: str = getEnvironmentVariable("MONGO_URI"), MONGO_DB: str = getEnvironmentVariable("MONGO_DB"), *args, **kwargs
-) -> tuple[list[dict], dict[str, list]]:
+) -> Tuple[List[dict], Dict[str, list]]:
     """
     Retreive collections and documents
     """
 
     # precondition
+    LOGGER.info(MONGO_URI)
     assert isinstance(MONGO_URI,str), "MONGO_URI env var not set"
     assert isinstance(MONGO_DB,str), "MONGO_DB env var not set"
 
