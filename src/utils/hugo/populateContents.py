@@ -3,20 +3,21 @@ from os.path import join
 
 INDEX_MD = """---
 title: {name}
-image: "img/sections/{name}.jpeg"
+image: "img/sections/{name}.jpg"
 ---
 
 {description}
-<!-- more -->"""
+<!--more-->"""
 
 HEADER_MD = """---
-name: {name}
-location: {location}
-price: {price}
-capacity: {capacity}
+title: {name}
+image: "img/restaurants/{image}"
 ---
 
-
+📌 {location}  
+💶 {price}  
+👨‍👩‍👦‍👦 {capacity}  
+<!--more-->
 """
 
 CONTENT_MD = """## {menuName}
@@ -49,7 +50,7 @@ def populateContents(hugoDir: str, sections: list, elements: dict, *, insideCont
         sectionPath = join(hugoDir, "content", insideContent, section[SECTION_NAME])
         createFolder(sectionPath)
         # _index.md
-        with open(join(sectionPath, '_index.md', 'w', encoding='utf8')) as f:
+        with open(join(sectionPath, '_index.md'), 'w', encoding='utf8') as f:
             f.write(INDEX_MD.format(**section))
 
         # *.md
