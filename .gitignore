@@ -5,6 +5,10 @@
 site/content
 site/public
 
+# gauth credentials
+credentials.json
+token.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
