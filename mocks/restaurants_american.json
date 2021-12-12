@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "5eb3d668b31de5d588f42931"
+  },
+  "address": {
+    "street": "11 Avenue"
+  },
+  "name": "Regina Caterers"
+},{
+  "_id": {
+    "$oid": "5eb3d668b31de5d588f42934"
+  },
+  "address": {
+    "street": "18 Avenue"
+  },
+  "name": "C & C Catering Service"
+},{
+  "_id": {
+    "$oid": "5eb3d668b31de5d588f42943"
+  },
+  "address": {
+    "street": "West Houston Street"
+  },
+  "name": "Angelika Film Center"
+},{
+  "_id": {
+    "$oid": "5eb3d668b31de5d588f4294f"
+  },
+  "address": {
+    "street": "8 Avenue"
+  },
+  "name": "Cafe Metro"
+},{
+  "_id": {
+    "$oid": "5eb3d668b31de5d588f4299c"
+  },
+  "address": {
+    "street": "37 Avenue"
+  },
+  "name": "Jahn'S Restaurant"
+},{
+  "_id": {
+    "$oid": "5eb3d668b31de5d588f429d3"
+  },
+  "address": {
+    "street": "First Avenue"
+  },
+  "name": "Finnegan'S Wake"
+},{
+  "_id": {
+    "$oid": "5eb3d668b31de5d588f429ea"
+  },
+  "address": {
+    "street": "St Marks Place"
+  },
+  "name": "Grassroot Tavern"
+},{
+  "_id": {
+    "$oid": "5eb3d668b31de5d588f429f1"
+  },
+  "address": {
+    "street": "Broadway"
+  },
+  "name": "Capitol Restaurant"
+},{
+  "_id": {
+    "$oid": "5eb3d668b31de5d588f42a3e"
+  },
+  "address": {
+    "street": "East Tremont Avenue"
+  },
+  "name": "Bronx Grill"
+},{
+  "_id": {
+    "$oid": "5eb3d668b31de5d588f42a45"
+  },
+  "address": {
+    "street": "East   18 Street"
+  },
+  "name": "Pete'S Tavern"
+}]
