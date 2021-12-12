@@ -6,7 +6,7 @@ LOGGER = gL(__name__)
 from os.path import isdir as dirExists, join
 from os import getcwd
 
-HUGO_STRUCTURE = ["archetypes", "content", "data", "layouts", "static", "themes"]
+HUGO_STRUCTURE = ["archetypes", "content", "data", "static", "themes"]
 
 
 def isFolderStructure(hugoContent: str) -> bool:
@@ -19,8 +19,9 @@ def isFolderStructure(hugoContent: str) -> bool:
 
     # logic
     for path in HUGO_STRUCTURE:
-        fullpath = join(getcwd(), hugoContent, path)
+        fullpath = join(hugoContent, path)
         if not dirExists(fullpath):
+            LOGGER.info(fullpath)
             return False
 
     return True
