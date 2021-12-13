@@ -1,3 +1,14 @@
+# macOS files
+**/.DS_Store
+
+# site generation
+site/content
+site/public
+
+# gauth credentials
+credentials.json
+token.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -116,9 +127,6 @@ venv.bak/
 
 # Rope project settings
 .ropeproject
-
-# mkdocs documentation
-/site
 
 # mypy
 .mypy_cache/
