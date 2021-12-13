@@ -49,7 +49,45 @@ Para finalizar podemos decir que la metodología Scrum es una metodología ágil
 - Futuras pruebas a realizar
 
 ### Implementación 
+
+- Tecnologías utilizadas
+Las tecnologías utilizadas en MOPYGO son las siguientes:
+## GoHugo
+
+**GoHugo** es un framework para creación de sitios web de propósito general, además de ser generadores de sitios 
+estáticos. 
+
+## MongoDB
+
+El **MongoDB** es un sistema de base de datos NoSQL, orientado a documentos y de código abierto
+
+
 - Herramientas utilizadas
+
+Las herramientas utilizadas en MOPYGO son las siguientes:
+
+## VsCode
+
+El **VsCode** es un editor de código fuente (IDE) utilizado para desarrollar el código fuente. El cual podemos 
+usar las erramientas como conventional commits, live Share, git graph, Python.
+
+## Git
+
+El **Git** es un software de control de versiones. En nuestro caso hemos utilizado Git como sistema de versionado
+de código para compartir y trabajar sobre nuestra aplicación y para mantener un registro de los cambios realizados.
+
+## Clockify
+
+El **Clockify** es una aplicación simple de seguimiento del tiempo y planilla de horarios que permiten tanto 
+al usuario como a un equipo de trabajorealizar el seguimiento de las horas trabajadas en los proyectos. 
+
+## GitHub
+
+El **GitHub** es una forja para alojar proyectos utilizando el sistema de control de versiones Git. Lo hemos
+utilizado esta plataforma para almacenar nuestro proyecto en la nube y además hemos utilizado la rama de github
+pages para hostear nuestra web en la red.
+
+
 - BackEnd
       - BBDD: CRUD (ejemplos + Ejemplos incorrecto ->)
 - FrontEnd
@@ -67,6 +105,18 @@ Para finalizar podemos decir que la metodología Scrum es una metodología ágil
 - Comparación temporal
 
 ### Dificultades 
+
+Las principales dificultades que hemos tenido han sido las siguientes:
+
+En primer, lugar al no conocer la tecnología de Hugo, por lo que nos hemos tenido que documentar bastante sobre el y saber que capacidades o que cosas puede llegar a hacer este framework. Por lo que tuvimos que invertir más horas de las programadas para poder llevar a cabo los requisitos para este proyecto. 
+
+En segundo lugar, Hugo nos ha estado dando problemas sobretodo en los dispositivos Windows y no sabias del porque. Incluso llegamos a desinstalar, volver a instalarlo y no obtuvimos ninguna respuesta. Finalmente tuvimos que cambiar el servidor web que ofrece Hugo y a partir de alli ya lo podiamos visualizar.
+
+En tercer lugar, a medida que el proyecto iba avanzando se iba incrementando el contenido hasta llegar al punto de que en el ultimo momento ha habido modificaciones y documentacion que incrementar. 
+
+Finalmente, el tiempo ha sido el detonante de este proyecto pues a medida que iba avanzando el proyecto veiamos que era más grande de lo que nos imaginabamos. Además a eso hay que añadir que se añadian nuevas funcionalidades y modificaciones. 
+
+
 
 ### Bibliografía
 
