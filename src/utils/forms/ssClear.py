@@ -10,7 +10,7 @@ from google.oauth2.credentials import Credentials
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 def clearSpreadsheet(
-    SPREADSHEET_ID: str, RANGE: str, *args,
+    SPREADSHEET_ID: str, CLEAR_RANGE: str, *args,
     TOKEN_FILE: str = "token.json", **kwargs
 ) -> None:
     """
@@ -23,7 +23,7 @@ def clearSpreadsheet(
     service = build('sheets', 'v4', credentials=CREDENTIALS)
     sheet = service.spreadsheets()
 
-    request = sheet.values().clear(spreadsheetId=SPREADSHEET_ID, range=RANGE)
+    request = sheet.values().clear(spreadsheetId=SPREADSHEET_ID, range=CLEAR_RANGE)
     response = request.execute()
 
     LOGGER.info('clearing spreadsheet response: %s', response)

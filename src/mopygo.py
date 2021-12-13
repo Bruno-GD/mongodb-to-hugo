@@ -81,6 +81,12 @@ if __name__ == '__main__':
         required=True,
         type=str
     )
+    parser.add_argument("-cr"
+        "--CLEAR_RANGE",
+        help="Set range to clear data from spreadsheet",
+        required=True,
+        type=str
+    )
     args = dict(parser.parse_args()._get_kwargs())
 
     main(**args)
