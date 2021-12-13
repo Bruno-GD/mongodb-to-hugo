@@ -27,4 +27,4 @@ def scrapSpreadsheet(
     request = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=RANGE)
     response = request.execute()
 
-    return response["values"]
+    return response["values"] if "values" in response else list()
