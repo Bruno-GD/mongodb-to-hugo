@@ -1,3 +1,4 @@
+from typing import List
 from pymongo import MongoClient
 from pymongo.errors import InvalidName
 
@@ -8,7 +9,7 @@ from logging import getLogger as gL
 LOGGER = gL(__name__)
 
 def putDataIntoCollection(
-    COLLECTION_NAME: str, DOCUMENTS: list[dict], *, COLLECTION_DESCRIPTION: str = "",
+    COLLECTION_NAME: str, DOCUMENTS: List[dict], *, COLLECTION_DESCRIPTION: str = "",
     MONGO_URI: str = getenv('MONGO_URI'), MONGO_DB: str = getenv('MONGO_DB')
 ) -> None:
     """
