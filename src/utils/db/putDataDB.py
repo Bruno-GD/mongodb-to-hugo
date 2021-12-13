@@ -9,8 +9,8 @@ from logging import getLogger as gL
 LOGGER = gL(__name__)
 
 def putDataIntoCollection(
-    COLLECTION_NAME: str, DOCUMENTS: List[dict], *, COLLECTION_DESCRIPTION: str = "",
-    MONGO_URI: str = getenv('MONGO_URI'), MONGO_DB: str = getenv('MONGO_DB')
+    COLLECTION_NAME: str, DOCUMENTS: List[dict], *args, COLLECTION_DESCRIPTION: str = "",
+    MONGO_URI: str = getenv('MONGO_URI'), MONGO_DB: str = getenv('MONGO_DB'), **kwargs
 ) -> None:
     """
     Insert into MongoDB
