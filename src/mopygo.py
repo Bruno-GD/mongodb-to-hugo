@@ -63,6 +63,24 @@ if __name__ == '__main__':
         help="Set subfolder output for '/content/ Hugo folder",
         default="",
         required=False)
+    parser.add_argument("-t",
+        "--TOKEN_FILE",
+        help="set token.json file path",
+        default="token.json",
+        required=False
+    )
+    parser.add_argument("-ss",
+        "--SPREADSHEET_ID",
+        help="Set spreadsheet id to get new data",
+        required=True,
+        type=str
+    )
+    parser.add_argument("-r",
+        "--RANGE",
+        help="Set range of spreadsheet",
+        required=True,
+        type=str
+    )
     args = dict(parser.parse_args()._get_kwargs())
 
     main(**args)
