@@ -11,22 +11,23 @@ def main(**kwargs) -> None:
     """
 
     ssRows = scrapSpreadsheet(**kwargs)
-    keys = ssRows[0][2:]
+    if len(ssRows) > 1:
+        keys = ssRows[0][2:]
 
-    restaurants = {}
-    for row in ssRows[1:]:
-        restaurant = dict(zip(keys, row[2:]))
-        restaurant["price"] = int(restaurant["price"])
-        restaurant["capacity"] = int(restaurant["capacity"])
-        restaurant["menu"] = []
-        restaurantType = row[0]
+        restaurants = {}
+        for row in ssRows[1:]:
+            restaurant = dict(zip(keys, row[2:]))
+            restaurant["price"] = int(restaurant["price"])
+            restaurant["capacity"] = int(restaurant["capacity"])
+            restaurant["menu"] = []
+            restaurantType = row[0]
 
-        if not restaurantType in restaurants:
-            restaurants[restaurantType] = []
-        restaurants[restaurantType].append(restaurant)
+            if not restaurantType in restaurants:
+                restaurants[restaurantType] = []
+            restaurants[restaurantType].append(restaurant)
 
-    for restType in restaurants:
-        putDataIntoCollection(restType, restaurants[restType], **kwargs)
+        for restType in restaurants:
+            putDataIntoCollection(restType, restaurants[restType], **kwargs)
 
     clearSpreadsheet(**kwargs)
 
