@@ -36,34 +36,34 @@ Requisitos:
 # Tecnologías utilizadas
 Las tecnologías utilizadas en MOPYGO son las siguientes:
 
-## GoHugo
+### GoHugo
 
 **GoHugo** es un framework para creación de sitios web de propósito general, además de ser generadores de sitios 
 estáticos. 
 
-## Mongodb
+### Mongodb
 
 El **Mongodb** es un sistema de base de datos NoSQL, orientado a documentos y de código abierto
 
 # Herramientas utilizadas
 Las herramientas utilizadas en MOPYGO son las siguientes:
 
-## VsCode
+### VsCode
 
 El **VsCode** es un editor de código fuente (IDE) utilizado para desarrollar el código fuente. El cual podemos 
 usar las erramientas como conventional commits, live Share, git graph, Python.
 
-## Git
+### Git
 
 El **Git** es un software de control de versiones. En nuestro caso hemos utilizado Git como sistema de versionado
 de código para compartir y trabajar sobre nuestra aplicación y para mantener un registro de los cambios realizados.
 
-## Clockify
+### Clockify
 
 El **Clockify** es una aplicación simple de seguimiento del tiempo y planilla de horarios que permiten tanto 
 al usuario como a un equipo de trabajorealizar el seguimiento de las horas trabajadas en los proyectos. 
 
-## GitHub
+### GitHub
 
 El **GitHub** es una forja para alojar proyectos utilizando el sistema de control de versiones Git. Lo hemos
 utilizado esta plataforma para almacenar nuestro proyecto en la nube y además hemos utilizado la rama de github
