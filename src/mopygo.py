@@ -1,11 +1,34 @@
+from .utils.db.putDataDB import putDataIntoCollection
+from .utils.forms.formScrapper import scrapSpreadsheet
 from .utils.hugo.generateSite import generateSite
 from .utils.db.getDataFromDB import getDataFromDB
+from .utils.forms.ssClear import clearSpreadsheet
 
 def main(**kwargs) -> None:
     """
     MoPyGo main function.
     Retreive data from DB and generate site.
     """
+
+    ssRows = scrapSpreadsheet(**kwargs)
+    keys = ssRows[0][2:]
+
+    restaurants = {}
+    for row in ssRows[1:]:
+        restaurant = dict(zip(keys, row[2:]))
+        restaurant["price"] = int(restaurant["price"])
+        restaurant["capacity"] = int(restaurant["capacity"])
+        restaurant["menu"] = []
+        restaurantType = row[0]
+
+        if not restaurantType in restaurants:
+            restaurants[restaurantType] = []
+        restaurants[restaurantType].append(restaurant)
+
+    for restType in restaurants:
+        putDataIntoCollection(restType, restaurants[restType], **kwargs)
+
+    clearSpreadsheet(**kwargs)
 
     sections, contentOfSections = getDataFromDB(**kwargs)
 
