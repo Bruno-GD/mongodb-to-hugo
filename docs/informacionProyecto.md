@@ -17,12 +17,32 @@ Requisitos:
 - El sistema se tiene que desplegar de manera automática mediante Docker.
 - Incrementar un sistema _workflow_ en git.
 - Aplicar el método SOLID.
-- Documentar el manual técnico que descrbe la arquitectura de la aplicación.
+- Documentar el manual técnico que descrbe la arquitectura de la aplicación. 
 
 ### Metodología
 
+Desarrollo iterativo y creciente (o incremental) es un proceso de desarrollo de software creado en respuesta a las debilidades del modelo tradicional de cascada.
 
-La metodología que hemos aplicado en el proyeto es la de scrum. En ella se basa en en la teoría de control de procesos empírica o empirismo. El empirismo asegura que el conocimiento procede de la experiencia y de tomar decisiones basándose en lo que se conoce. Scrum emplea un enfoque iterativo e incremental para optimizar la predictibilidad y el control del riesgo. Los aspectos significativos del proceso deben ser visibles para aquellos que son responsables del resultado. La transparencia requiere que dichos aspectos sean definidos por un estándar común, de tal modo que los observadores compartan un entendimiento común de lo que se está viendo.
+Básicamente este modelo de desarrollo, que no es más que un conjunto de tareas agrupadas en pequeñas etapas repetitivas (iteraciones), es uno de los más utilizados en los últimos tiempos ya que, como se relaciona con novedosas estrategias de desarrollo de software y una programación extrema, es empleado en metodologías diversas.
+
+El modelo consta de diversas etapas de desarrollo en cada incremento, las cuales inician con el análisis y finalizan con la instauración y aprobación del sistema.
+
+El modelo incremental lleva a pensar en un desarrollo modular, con entregas
+parciales del producto Software denominados "incrementos" del sistema, que son escogidos en base a prioridades predefinidas de algún modo.
+
+El modelo permite una implementación con refinamientos sucesivos (ampliación y/o mejoras). Con cada incremento se agrega nueva funcionalidad o se cubren nuevos requisitos o bien se mejora la versión previamente implementada del producto software.
+
+![](assets/incremental.png)
+
+En definitiva este modelo es más flexible y rápido de usar. Además de reducir las propiedades de riesgo por lo que reduce tanto el coste de producción como el tiempo de creación. También es más fácil de probar y de depurar en una iteración más pequeña eso nos facilita detectar errores en porciones más pequeñas del código. Gracias a esto le permite al usuario utilizar el sistema antes de su puesta en producción ya que todas las piezas del mismo han sido probadas y funcionan.
+
+No obstante, hay que tener en cuenta que se requiere una cierta experiencia y que las fases de iteraciones no se superponen por lo que no podemos reutilizar iteraciones, creando así un aumento considerable del código. Así mismo hay que considerar que este método puede ocasionar problemas de la arquitectura.
+
+En conclusión dependiendo de la finalidad de cada proyecto nos puede beneficiar este método ya que es más rápido, flexible y no hay que olvidar que reduce el coste de producción.
+
+
+
+Además nos hemos apoyado con el scrum. En ella se basa en en la teoría de control de procesos empírica o empirismo. El empirismo asegura que el conocimiento procede de la experiencia y de tomar decisiones basándose en lo que se conoce. Scrum emplea un enfoque iterativo e incremental para optimizar la predictibilidad y el control del riesgo. Los aspectos significativos del proceso deben ser visibles para aquellos que son responsables del resultado. La transparencia requiere que dichos aspectos sean definidos por un estándar común, de tal modo que los observadores compartan un entendimiento común de lo que se está viendo.
 
 Esta metodología está formada por 5 etapas que son:
 1. Inicio
@@ -31,26 +51,94 @@ Esta metodología está formada por 5 etapas que son:
 4. Revisión y retrospectiva
 5. Lanzamiento
 
-![](docs/assets/principios_Metodologia_Scrum.png)
+![](assets/principios_Metodologia_Scrum.png)
 
-Para finalizar podemos decir que la metodología Scrum es una metodología ágil que hace énfasis en el trabajo en equipo donde la claridad de los objetivos es crucial para avanzar hacia una versión cada vez mejor. Desde el punto de vista humano, favorece la motivación, la creatividad y el compromiso del equipo de trabajo. La claridad de los objetivos de cada una de las tareas programadas, así como el registro diario de las novedades, son factores que generan propuestas de avance hacia una versión mejorada. Estos factores, por supuesto, se reflejan positivamente en los niveles de producción de la empresa. Sin embargo el scrum no es muy efectivo si se hacen con grupos muy ampliados ya que se puede ir de las manos y tardar más de lo necesario. A eso, también, hay que añadirle que se tiene que trabajar con metas por días o semanales o mensuales y por etapas para poder llegar a los plazos y eso se necesita mucha organización. Asimismo es importante que las personas que hagan esta metodología tengan un gran nivel de cualificación para poder realizarla correctamente. En definitiva, el scrum si se hace bien es muy efectivo pero requiere un alto nivel de implicación.
+Para finalizar podemos decir que Scrum es una metodología ágil que hace énfasis en el trabajo en equipo donde la claridad de los objetivos es crucial para avanzar hacia una versión cada vez mejor. Desde el punto de vista humano, favorece la motivación, la creatividad y el compromiso del equipo de trabajo. La claridad de los objetivos de cada una de las tareas programadas, así como el registro diario de las novedades, son factores que generan propuestas de avance hacia una versión mejorada. Estos factores, por supuesto, se reflejan positivamente en los niveles de producción de la empresa. Sin embargo el scrum no es muy efectivo si se hacen con grupos muy ampliados ya que se puede ir de las manos y tardar más de lo necesario. A eso, también, hay que añadirle que se tiene que trabajar con metas por días o semanales o mensuales y por etapas para poder llegar a los plazos y eso se necesita mucha organización. Asimismo es importante que las personas que hagan esta metodología tengan un gran nivel de cualificación para poder realizarla correctamente. En definitiva, el scrum si se hace bien es muy efectivo pero requiere un alto nivel de implicación.
 
 ### Analisis
-- Partes interesadas
+<!-- - Partes interesadas
 - Requisitos funcionales
 - Requisitos no funcionales -> RnF_XX
-- Diagnostico de casos de uso (UML)
+- Diagnostico de casos de uso (UML) -->
 - Posibles tecnoloías 
 - Elección de tecnologías -> Matriz Requisitos/Tecnologías
 
 ### Diseño
 - Mapa conceptual proyecto
+![](assets/arquitectura.png)
+<!-- Explicarlo detalladamente -->
+
 - Esquema de BBDD
+
+Cada coleccion es un tipo de restaurante, dentro de ella está la listas de los restaurentes.
+En cada documento sigue una estructura con los datos del restaurantes como por ejemplo el nombre del
+restaurante, la ubicación, la capacidad del local.
+
+```json
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'name',
+      'location',
+      'price',
+      'menu',
+      'capacity'
+    ],
+    properties: {
+      name: {
+        bsonType: 'string'
+      },
+      location: {
+        bsonType: 'string'
+      },
+      price: {
+        bsonType: 'int'
+      },
+      capacity: {
+        bsonType: 'int'
+      },
+      menu: {
+        bsonType: 'array',
+        items: {
+          additionalProperties: false,
+		  required: [
+            'menuName',
+            'first',
+            'second',
+            'desert'
+          ],
+          properties: {
+            menuName: {
+              bsonType: 'string'
+            },
+            first: {
+              bsonType: 'string'
+            },
+            second: {
+              bsonType: 'string'
+            },
+            desert: {
+              bsonType: 'string'
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+```
+Cada documento 
+
 - Futuras pruebas a realizar
+<!-- quierres casos test o quieres un video de comporvando de como se hace el TDD 
+expliaccaion de cada caso test-->
 
 ### Implementación 
 
 - Tecnologías utilizadas
+
 Las tecnologías utilizadas en MOPYGO son las siguientes:
 ## GoHugo
 
@@ -87,14 +175,24 @@ El **GitHub** es una forja para alojar proyectos utilizando el sistema de contro
 utilizado esta plataforma para almacenar nuestro proyecto en la nube y además hemos utilizado la rama de github
 pages para hostear nuestra web en la red.
 
+## Black 
+_Black_ es un formateador obstinado que cumple con los requisitos impuestos en [PEP 8](https://www.python.org/dev/peps/pep-0008/). _Black_ reformatea archivos completos en su lugar. Las opciones de configuración de estilo están deliberadamente limitadas y rara vez se agregan. No tiene en cuenta el formato anterior.
+
+## Coverage 
+_Coverage_ es una herramienta para medir la cobertura de código de los programas Python. Supervisa su programa, observa qué partes del código se han ejecutado, luego analiza la fuente para identificar el código que podría haberse ejecutado pero no lo ha sido.
+
+La medición de cobertura se usa generalmente para medir la efectividad de las pruebas. Puede mostrar qué partes de su código están siendo ejercitadas por pruebas y cuáles no.
 
 - BackEnd
-      - BBDD: CRUD (ejemplos + Ejemplos incorrecto ->)
+<!-- Como te ponemos la bd. python, hugo  -->
+
+- BBDD: CRUD (ejemplos + Ejemplos incorrecto ->)
 - FrontEnd
+<!-- lo que ve el usuario Site capturas iria bien de pa pag web? -->
   - ... 
   - ...
 
-### Pruebas
+### Pruebas <!-- pruebas realizadas con el TDD -->
 - Futuras pruebas a realizar
 - BackEnd (codigo + capturas de pantalla)
 - FrontEnd
