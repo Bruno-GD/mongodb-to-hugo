@@ -64,15 +64,16 @@ Para finalizar podemos decir que Scrum es una metodología ágil que hace énfas
 - Elección de tecnologías -> Matriz Requisitos/Tecnologías
 
 ### Diseño
-- Mapa conceptual proyecto
+<!-- - Mapa conceptual proyecto -->
+
 ![](assets/arquitectura.png)
 <!-- Explicarlo detalladamente -->
 
-- Esquema de BBDD
+# Esquema de BBDD
 
-Cada coleccion es un tipo de restaurante, dentro de ella está la listas de los restaurentes.
-En cada documento sigue una estructura con los datos del restaurantes como por ejemplo el nombre del
-restaurante, la ubicación, la capacidad del local.
+Cada colección es un tipo de restaurante, dentro de ella está la listas de los restaurantes. En cada documento sigue una estructura con los datos del restaurantes como por ejemplo el nombre del restaurante, la ubicación, la capacidad del local.
+
+También tenemos una colección llamada `types` la cual contiene el nombre y la descripción del tipo de restaurante, el nombre hace referencia a una colección existente.
 
 ```json
 {
@@ -129,11 +130,15 @@ restaurante, la ubicación, la capacidad del local.
 }
 
 ```
-Cada documento 
 
 - Futuras pruebas a realizar
-<!-- quierres casos test o quieres un video de comporvando de como se hace el TDD 
-expliaccaion de cada caso test-->
+<!-- 
+expliacaión de cada caso test
+(habría que revisar los casos test)
+1. CRUD con Python
+2. I/O con Python
+3. I/O con Hugo
+-->
 
 ### Implementación 
 
@@ -184,13 +189,29 @@ _Coverage_ es una herramienta para medir la cobertura de código de los programa
 La medición de cobertura se usa generalmente para medir la efectividad de las pruebas. Puede mostrar qué partes de su código están siendo ejercitadas por pruebas y cuáles no.
 
 - BackEnd
-<!-- Como te ponemos la bd. python, hugo  -->
+<!--
+Base de datos en MongoAtlas (captura de pantalla?)
+Python (?)
+Hugo
+-->
 
 - BBDD: CRUD (ejemplos + Ejemplos incorrecto ->)
+<!--
+1. hacer un ".insertOne()" bien hecho y mal hecho, poner captura del error
+2. hacer un ".find()" de lo insertado antes para mostrar que existe
+3. hacer un ".updateOne()" de lo insertado antes
+4. hacer un ".find()" otra vez para mostrar el "update"
+5. hacer un ".delete()" de lo insertado antes
+6. hacer un ".find()" de lo anterior para mostrar que se ha borrado
+-->
 - FrontEnd
-<!-- lo que ve el usuario Site capturas iria bien de pa pag web? -->
-  - ... 
-  - ...
+<!--
+Capturas de pantalla:
+- página principal
+- formulario
+- single de algun restaurante
+(about no hace falta)
+-->
 
 ### Pruebas <!-- pruebas realizadas con el TDD -->
 - Futuras pruebas a realizar
@@ -200,6 +221,8 @@ La medición de cobertura se usa generalmente para medir la efectividad de las p
 ### Comparación temporal 
 - Estimación inicial por tases o detallado por tereas
 - Estimación real -> clockity
+
+![](assets/Clockify.jpg)
 - Comparación temporal
 
 ### Dificultades 
