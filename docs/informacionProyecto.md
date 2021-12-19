@@ -2,7 +2,30 @@
 ![](assets/logoMopygo.png)
 
 # Índice
-<!-- Poner índice -->
+- Introducción
+- Metodología
+- Analisis
+  - Primer diagrama general
+  - Posibles tecnologías
+- Diseño
+  - Diagrama de componenetes
+  - Esquema BBDD
+  - Futuras pruebas
+- Implementación
+  - Tecnologias utilizadas
+  - Herramientas utilizadas
+  - BackEnd 
+    - CRUD
+  - FrondEnd
+- Pruebas
+  - TDD
+  - CRUD
+- Comparación temporal 
+- Dificultades
+- Futuras mejoras
+- Bibliografía
+
+
 # Introducción
 
 En este proyecto tendremos que actualizar una web de una empresa de menus de restaurantes de lujo. La página web contine listas de cartas de restaurentes (ítems) que están en stock, en las cuales estas se clasifican en diferentes estilo de cocina.
@@ -19,7 +42,7 @@ Requisitos:
 - Aplicar el método SOLID.
 - Documentar el manual técnico que descrbe la arquitectura de la aplicación. 
 
-### Metodología
+# Metodología
 
 Desarrollo iterativo y creciente (o incremental) es un proceso de desarrollo de software creado en respuesta a las debilidades del modelo tradicional de cascada.
 
@@ -54,28 +77,54 @@ Esta metodología está formada por 5 etapas que son:
 ![](assets/principios_Metodologia_Scrum.png)
 
 Para finalizar podemos decir que Scrum es una metodología ágil que hace énfasis en el trabajo en equipo donde la claridad de los objetivos es crucial para avanzar hacia una versión cada vez mejor. Desde el punto de vista humano, favorece la motivación, la creatividad y el compromiso del equipo de trabajo. La claridad de los objetivos de cada una de las tareas programadas, así como el registro diario de las novedades, son factores que generan propuestas de avance hacia una versión mejorada. Estos factores, por supuesto, se reflejan positivamente en los niveles de producción de la empresa. Sin embargo el scrum no es muy efectivo si se hacen con grupos muy ampliados ya que se puede ir de las manos y tardar más de lo necesario. A eso, también, hay que añadirle que se tiene que trabajar con metas por días o semanales o mensuales y por etapas para poder llegar a los plazos y eso se necesita mucha organización. Asimismo es importante que las personas que hagan esta metodología tengan un gran nivel de cualificación para poder realizarla correctamente. En definitiva, el scrum si se hace bien es muy efectivo pero requiere un alto nivel de implicación.
+# Analisis
 
-### Analisis
-<!-- - Partes interesadas
-- Requisitos funcionales
-- Requisitos no funcionales -> RnF_XX
-- Diagnostico de casos de uso (UML) -->
-- Posibles tecnoloías 
-- Elección de tecnologías -> Matriz Requisitos/Tecnologías
+## Primer diagrama general
 
-### Diseño
-<!-- - Mapa conceptual proyecto -->
+Partimos de la base en la que hay un servidor. En ella esta constituida por una capa de datos, que en nuestro caso hemos usado el servicio de Mongo Atlas, la cual tuvimos que poblar con datos de ejemplo. Dentro del mismo servidor con ayuda de un script de Python nos conectamos a la base de datos con la libreria _PyMongo_. 
+
+Une vez sacado los datos entramos en la capa de negocio, la que encontramos otro script de Python que procesará los datos y escribirá archivos Markdown. 
+
+AL finalizar la escritura de los archivos Markdown, Hugo consumirá esos archivos para generar el sitio web. 
+
+Finalmente entramos en el entorno cliente donde encontramos una capa de presentación la cual está constituida por archivos HTML, CSS y JS (JavaScript). Gracias a ello el usuario final puede visualizar el contenido en su navegador 
 
 ![](assets/arquitectura.png)
-<!-- Explicarlo detalladamente -->
 
-# Esquema de BBDD
+## Posibles tecnologías
 
-Cada colección es un tipo de restaurante, dentro de ella está la listas de los restaurantes. En cada documento sigue una estructura con los datos del restaurantes como por ejemplo el nombre del restaurante, la ubicación, la capacidad del local.
+| Tecnologias | _workflow_ | BBDD | Generador web con MD |
+|-| - | - | - |
+| GoHugo | - | - | X |
+| MongoDB |  - | X | - |
+| GitHub |  X | - | - |
+
+# Diseño
+
+## Diagrama de componenetes
+
+![](assets/diagramaComponentes.png)
+
+Este proyecto se compone de un archivo principal llamado _mopygo_. En este se acccede a múltiples funciones que son llamadas a cada una de ellas (`scrapSpreadsheet`, `putDataIntoCollection`, `clearSpreadsheet`, `getDataFromDB`, `generateSite`).
+
+La función `scrapSpreadsheet` recoge los datos excritos en un excel de Google Drive el cual llama al procedimeinto `checkCredentials` que comprueba que las credenciales de google son validas. 
+
+La función `putDataIntoCollection` mete los datos en l base de datos. 
+
+El procedimiento `clearSpreadsheet`limpa el excel y accede al procedimiento `checkCredentials` que comprueba que las credenciales de google son validas.
+
+La función `getDataFromDB`saca los datos de la base de datos. 
+
+El procedimiento `generateSite` genera los Markdown para hugo haciendo uso de tres procedimientos llamados `clearHugoContent`(limpiar la carpeta de contenido Hugo), `createHugoStructure`(crea la estructura de directorio de hugo, para ello, comprueba si existe el comando de hugo (`isHugoAvailable`) y en el caso que exista lo ejecuta (`startHugoSite`)) y  `populateContents`(puebla la carpeta de contenidocon archivos Markdown).
+
+# Esquema BBDD
+
+El esquema de la base de datos es organizado de la siguiente forma, cada colección es un tipo de restaurante, dentro de ella está la listas de los restaurantes. En cada documento sigue una estructura con los datos del restaurantes como por ejemplo el nombre del restaurante, la ubicación, la capacidad del local.
 
 También tenemos una colección llamada `types` la cual contiene el nombre y la descripción del tipo de restaurante, el nombre hace referencia a una colección existente.
 
-```json
+###### Validación esquema
+```js
 {
   $jsonSchema: {
     bsonType: 'object',
@@ -130,27 +179,17 @@ También tenemos una colección llamada `types` la cual contiene el nombre y la 
 }
 
 ```
-
-- Futuras pruebas a realizar
-<!-- 
-expliacaión de cada caso test
-(habría que revisar los casos test)
-1. CRUD con Python
-2. I/O con Python
-3. I/O con Hugo
--->
-
-### Implementación 
-
-- Tecnologías utilizadas
+## Futuras pruebas
+# Implementación
+## Tecnologías utilizadas
 
 Las tecnologías utilizadas en MOPYGO son las siguientes:
-## GoHugo
+### GoHugo
 
 **GoHugo** es un framework para creación de sitios web de propósito general, además de ser generadores de sitios 
 estáticos. 
 
-## MongoDB
+### MongoDB
 
 El **MongoDB** es un sistema de base de datos NoSQL, orientado a documentos y de código abierto
 
@@ -159,73 +198,173 @@ El **MongoDB** es un sistema de base de datos NoSQL, orientado a documentos y de
 
 Las herramientas utilizadas en MOPYGO son las siguientes:
 
-## VsCode
-
-El **VsCode** es un editor de código fuente (IDE) utilizado para desarrollar el código fuente. El cual podemos 
-usar las erramientas como conventional commits, live Share, git graph, Python.
-
-## Git
-
-El **Git** es un software de control de versiones. En nuestro caso hemos utilizado Git como sistema de versionado
-de código para compartir y trabajar sobre nuestra aplicación y para mantener un registro de los cambios realizados.
-
-## Clockify
-
-El **Clockify** es una aplicación simple de seguimiento del tiempo y planilla de horarios que permiten tanto 
-al usuario como a un equipo de trabajorealizar el seguimiento de las horas trabajadas en los proyectos. 
-
-## GitHub
+### GitHub
 
 El **GitHub** es una forja para alojar proyectos utilizando el sistema de control de versiones Git. Lo hemos
 utilizado esta plataforma para almacenar nuestro proyecto en la nube y además hemos utilizado la rama de github
 pages para hostear nuestra web en la red.
 
-## Black 
+### Python
+
+Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.​ Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional.
+
+## Herramientas utilizadas
+Las herramientas utilizadas en MOPYGO son las siguientes:
+
+### VsCode
+
+El **VsCode** es un editor de código fuente (IDE) utilizado para desarrollar el código fuente. El cual podemos 
+usar las erramientas como conventional commits, live Share, git graph, Python.
+
+### Clockify
+
+El **Clockify** es una aplicación simple de seguimiento del tiempo y planilla de horarios que permiten tanto 
+al usuario como a un equipo de trabajorealizar el seguimiento de las horas trabajadas en los proyectos. 
+
+### Git
+
+El **Git** es un software de control de versiones. En nuestro caso hemos utilizado Git como sistema de versionado
+de código para compartir y trabajar sobre nuestra aplicación y para mantener un registro de los cambios realizados.
+
+### Black 
 _Black_ es un formateador obstinado que cumple con los requisitos impuestos en [PEP 8](https://www.python.org/dev/peps/pep-0008/). _Black_ reformatea archivos completos en su lugar. Las opciones de configuración de estilo están deliberadamente limitadas y rara vez se agregan. No tiene en cuenta el formato anterior.
 
-## Coverage 
+### Coverage 
 _Coverage_ es una herramienta para medir la cobertura de código de los programas Python. Supervisa su programa, observa qué partes del código se han ejecutado, luego analiza la fuente para identificar el código que podría haberse ejecutado pero no lo ha sido.
 
 La medición de cobertura se usa generalmente para medir la efectividad de las pruebas. Puede mostrar qué partes de su código están siendo ejercitadas por pruebas y cuáles no.
+## BackEnd 
 
-- BackEnd
+El backEnd son todas las tecnologías que se encuentran en la cara oculta al usuario, el servidor, en el que podemos encontrar (que esta explicado anteriormente):
+- [MongoAtlas](#MongoDB)
+- [Python](#Python)
+- [Hugo](#GoHugo)
+
+<!-- ## CRUD -->
+## FrontEnd
+
+Todas las tecnoloías que se encuentran a la vista del usuario, el cliente:
+- HTML
+- CSS
+- JS (Booststrap, jQuery, owl, masonry)
+# Pruebas
+## TDD
 <!--
-Base de datos en MongoAtlas (captura de pantalla?)
-Python (?)
-Hugo
+1. Coger los casos test de la carpeta /tests
+2. Poner el código, explicar el motivo de ese caso test
+3. Mostrar los resultados
 -->
+## CRUD
 
-- BBDD: CRUD (ejemplos + Ejemplos incorrecto ->)
-<!--
-1. hacer un ".insertOne()" bien hecho y mal hecho, poner captura del error
-2. hacer un ".find()" de lo insertado antes para mostrar que existe
-3. hacer un ".updateOne()" de lo insertado antes
-4. hacer un ".find()" otra vez para mostrar el "update"
-5. hacer un ".delete()" de lo insertado antes
-6. hacer un ".find()" de lo anterior para mostrar que se ha borrado
--->
-- FrontEnd
-<!--
-Capturas de pantalla:
-- página principal
-- formulario
-- single de algun restaurante
-(about no hace falta)
--->
+Para hacer CRUD usaremos los siguientes datos que encontramos a continuación. 
 
-### Pruebas <!-- pruebas realizadas con el TDD -->
-- Futuras pruebas a realizar
-- BackEnd (codigo + capturas de pantalla)
-- FrontEnd
+```js 
+{
+    "name": "Regina Caterers",
+    "location": "11 Avenue",
+    "price": 455,
+    "menu": [{
+        "menuName": "Uep,com anam!",
+        "first": "Patatas con chedar y beicon",
+        "second": "sandwich con pollo y lechuga",
+        "desert": "Tarta de manzana"
+    }, {
+        "menuName": "A la mierda la dieta",
+        "first": "Hot Dog",
+        "second": "Chuleton de 15kg",
+        "desert": "Tarta tres chocolates"
+    }],
+    "capacity": 2,
+    "image": "americanoPollo.jpeg"
+}
+```
 
-### Comparación temporal 
+1. Buscaremos la colección para comprobar que no existen esos datos.
+```
+db.american.find({name:"Regina Caterers"})
+```
+![](assets/find1.png)
+
+2. Insertar un docuemento con los datos de ejemplo con un `insertOne`.
+```
+db.american.insertOne({name:"Regina Caterers", ...})
+```
+![](assets/insertOne.png)
+
+3. Comprobar que se ha insertado el documento.
+```
+db.american.find({name:"Regina Caterers"})
+```
+![](assets/find2.png)
+
+4. Insertar docuemnto erroneo.
+``` 
+db.american.insertOne({name:"Regina Caterers", ...})
+```
+![](assets/Errorinsert.png)
+
+5. Actualizar el documento.
+```
+db.american.update({name:"Regina Caterers"}, {$set: {price:400}})
+```
+![](assets/update.png)
+
+6. Comprobar que el documento se han actuailzado.  
+```
+db.american.find({name:"Regina Caterers"})
+```
+![](assets/update_fin.png)
+
+7. Actualizar el documento de forma erronea. 
+```
+db.american.update({name:"Regina Caterers"}, {$set: {price:"400"}})
+```
+![](assets/update_error.png)
+
+8. Borrar el documento.
+```
+db.american.deleteOne({name:"Regina Caterers"})
+```
+![](assets/delete.png)
+
+9. Comprobar que se ha eliminado el documento.
+```
+db.american.find({name:"Regina Caterers"})
+```
+![](assets/find1.png)
+
+# Comparación temporal 
+
 - Estimación inicial por tases o detallado por tereas
 - Estimación real -> clockity
 
-![](assets/Clockify.jpg)
+En este proyecto hemos invertido un total de 159 horas en el cual por ambas partes de las personas implicadas en el proyecto (Noeila y Bruno) han hecho las mismas horas mutuamente.
+
+En el siguiente diagrama circular podemos observar las horas invertidas por etiqueta (módulos de clase), en él podemos observar que donde más horas se han invertido es en _Entornos de Desarrollo_ debido a la gran documentación que se ha solicitado.
+
+La segunda etiqueta con más horas invertidas es _Programación_ como era de esperar, debido a que el proyecto se centraba principalmente en la aprendizaje de Python.
+
+En tercer lugar tenemos la etiqueta _Plan proyecto_ la cual hace referencia a las horas invertidas en cómo se llevaría acabo el proyecto.
+
+Lás demás etiquetas, como _Lenguajes de marcas_, _Varios_ y _Bases de datos_ tienen menos horas invertidas debido a su baja complejidad en cuanto al proyecto.
+
+<figure>
+  <img src="assets/Clockify1.jpg">
+  <figcaption>
+    <h6><i>Diagrama circular de las horas invertidas</i></h6>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/Summary.jpg">
+  <figcaption>
+    <h6><i>Resumen horas diarias del 18/11/21 a 19/12/21</i></h6>
+  </figcaption>
+</figure>
+
 - Comparación temporal
 
-### Dificultades 
+# Dificultades
 
 Las principales dificultades que hemos tenido han sido las siguientes:
 
@@ -235,22 +374,12 @@ En segundo lugar, Hugo nos ha estado dando problemas sobretodo en los dispositiv
 
 En tercer lugar, a medida que el proyecto iba avanzando se iba incrementando el contenido hasta llegar al punto de que en el ultimo momento ha habido modificaciones y documentacion que incrementar. 
 
-Finalmente, el tiempo ha sido el detonante de este proyecto pues a medida que iba avanzando el proyecto veiamos que era más grande de lo que nos imaginabamos. Además a eso hay que añadir que se añadian nuevas funcionalidades y modificaciones. 
+Finalmente, el tiempo ha sido el detonante de este proyecto pues a medida que iba avanzando el proyecto veiamos que era más grande de lo que nos imaginabamos. Además a eso hay que añadir que se añadian nuevas funcionalidades y modificaciones.
 
+# Futuras mejoras
 
+Una de las posibles mejoras que nos gustaría implementar en este proyecto debido a que no tuvimos el tiempo suficiente para invertirlo en ello sería mejorar y ampliar los apartados de la página web, como podría ser los formularios de ingreso de datos, de actualización de datos y de borrado de datos.
 
-### Bibliografía
+Actualmente solamente encontramos un formulario de ingreso de datos hecho con _Google Forms_ y nos gustaría retirarlo y sustituirlo por un formulario hecho por nosotros en HTML, además de implementar una _RestAPI_ con la que poder interaccionar con la base de datos.
 
-[Documento repte vevops CI/CD](https://docs.google.com/document/d/1qA-qOmxmJfzvVzHCmmv_wPQ2p5U8GA0Xu0w9rMpxbSM/edit?usp=sharing)
-
-Scrum:
-
-- [Scrum de “Wikipedia”](https://es.wikipedia.org/wiki/Scrum_(desarrollo_de_software))
-- [Metodolgia Scrum de “Softeng”](https://www.softeng.es/ca-es/empresa/metodologies-de-treball/metodologia-scrum.html)
-- [Scrum de “Atlassian”](https://www.atlassian.com/es/agile/scrum)
-- [Ventajas y desventajas Scrum de "Waredrew"](https://blog.wearedrew.co/ventajas-y-desventajas-de-la-metodologia-scrum)
-
-
-Hugo:
-
-- [Introducción de hugo](https://gohugo.io/getting-started/quick-start/)
+# Bibliografía
