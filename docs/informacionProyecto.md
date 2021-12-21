@@ -252,12 +252,39 @@ Todas las tecnoloías que se encuentran a la vista del usuario, el cliente:
 <!-- explicarción de que hemos hecho -->
 # Pruebas
 ## TDD
-<!-- # lo mismo que el crud  3/4 -->
-<!--
-1. Coger los casos test de la carpeta /tests
-2. Poner el código, explicar el motivo de ese caso test
-3. Mostrar los resultados
--->
+### [Caso test introducción de datos](../test/test_db_data.py)
+En este caso test haciamos las pruebas de inserción de datos de forma manual en la base de datos y con el uso de [mocks](../mocks).
+
+En el [primer test](../test/test_db_data.py#L17-L43), se puede observar el uso de la función `putDataIntoCollection` la cual se conecta a la base de datos y introduce los datos en una colección.
+
+En el [segundo test](../test/test_db_data.py#L47-L77), realizamos primero la recolección de los datos extraídos de los archivos _JSON_ guardados en la carpeta _mocks_ y son introducidos en la base de datos con el uso de la función anterior `putDataIntoCollection`.
+
+### [Caso test conexión BBDD](../test/test_db_connection.py)
+En este caso test intentamos conectarnos a la base de datos con el uso de un URI obtenido de _MongoAtlas_.
+
+En el [primer test](../test/test_db_connection.py#L8-L12), con el uso de la función `getDataFromDB` intentamos conectarnos a la BBDD y obtener los datos de las colecciones.
+
+En el [segundo test](../test/test_db_connection.py#L16-L24), usando la función ya mencionada intentamos conectarnos a la BBDD usando un URI inválido y así comprobar que la función procede como debería.
+
+### [Caso test creación estructura Hugo](../test/test_create_structure.py)
+En este caso test ejecutamos la función `createHugoStructure` para crear la estructura de directorios que establecía la documentación de _Hugo_.
+
+En el [primer test](../test/test_create_structure.py#L13-L15), hacemos uso de la función mencionada para crear la estructura, primero se comprueba si está disponible el comando de _Hugo_ en la terminal del sistema y se ejecuta el comando correspondiente para generar una estructura nueva. En su defecto, el script de _Python_ genera una estructura básica.
+
+En el [segundo test](../test/test_create_structure.py#L25-L27), como en el anterior caso test dejamos decidir comprobar la existencia del comando, en este hacemos comprobaciones con la función que ejecuta el comando de _Hugo_ evitando la comprobación anterior y forzando la ejecución del comando.
+
+### [Caso test generar site](../test/test_generate_site.py)
+En este caso test ejecutaremos la función `generateSite` que nos permitirá generar todo el contenido para _Hugo_ poder consumirlo más adelante.
+
+En el [primer test](../test/test_generate_site.py#L7), ejecutamos la función pasandole datos de ejemplo y comprobar que no da ninguna excepción no controlada.
+
+En el [segundo test](../test/test_generate_site.py#L9), obtenemos primero los datos de la BBDD y le pasamos datos "reales" a nuestra función para comprobar que no da ninguna excepción no controlada.
+
+### [Caso test scrapper excel](../test/test_ss_scrapper.py)
+En este caso test haremos uso de la función `scrapSpreadsheet` que nos permitirá obtener de _Google Spreadsheet_ los datos en un rango especificado.
+
+En el [único test](../test/test_ss_scrapper.py#L12-L16), ejecutamos la función para extraer los datos del _Google Spreadsheet_ con el uso de las APIs de Google. Esta función recoge las credenciales de acceso y le indicamos un ID de hoja (generado por Google) y el rango (establecido por nosotros) que queremos capturar.
+En este test queremos comprobar que la conexión a la API y el rango funciona como es debido y no hay ninguna excepción no controlada, además mostraremos por la salida de consola los datos del Excel.
 ## CRUD
 
 Para hacer CRUD usaremos los siguientes datos que encontramos a continuación. 
