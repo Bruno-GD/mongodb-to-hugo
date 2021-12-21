@@ -2,28 +2,27 @@
 ![](assets/logoMopygo.png)
 
 # Índice
-- Introducción
-- Metodología
-- Analisis
-  - Primer diagrama general
-  - Posibles tecnologías
-- Diseño
-  - Diagrama de componenetes
-  - Esquema BBDD
-  - Futuras pruebas
-- Implementación
-  - Tecnologias utilizadas
-  - Herramientas utilizadas
-  - BackEnd 
-    - CRUD
-  - FrondEnd
-- Pruebas
-  - TDD
-  - CRUD
-- Comparación temporal 
-- Dificultades
-- Futuras mejoras
-- Bibliografía
+- [Introducción](#Introducción)
+- [Metodología](#Metodología) 
+- [Analisis](#Analisis)
+  - [Primer diagrama general](#Primer-diagrama-general)
+  - [Posibles tecnologías](#Posibles-tecnologías)
+- [Diseño](#Diseño)
+  - [Diagrama de componenetes](#Diagrama-de-componenetes)
+  - [Esquema BBDD](#Esquema-BBDD)
+- [Implementación](#Implementación)
+  - [Tecnologias utilizadas](#Tecnologias-utilizadas)
+  - [Herramientas utilizadas](#Herramientas-utilizadas)
+  - [BackEnd](#BackEnd)
+    - [CRUD](#CRUD:)
+  - [FrondEnd](#FrondEnd)
+- [Pruebas](#Pruebas)
+  - [TDD](#TDD)
+  - [CRUD](#CRUD)
+- [Comparación temporal](#Comparación-temporal)
+- [Dificultades](#Dificultades)
+- [Futuras mejoras](#Futuras-mejoras)
+- [Bibliografía](#Bibliografía)
 
 
 # Introducción
@@ -95,9 +94,9 @@ Finalmente entramos en el entorno cliente donde encontramos una capa de presenta
 
 | Tecnologias | _workflow_ | BBDD | Generador web con MD |
 |-| - | - | - |
-| GoHugo | - | - | X |
-| MongoDB |  - | X | - |
-| GitHub |  X | - | - |
+| GoHugo | - | - | ✅ |  
+| MongoDB |  - | ✅ | - |
+| GitHub | ✅ | - | - |
 
 # Diseño
 
@@ -179,76 +178,81 @@ También tenemos una colección llamada `types` la cual contiene el nombre y la 
 }
 
 ```
-## Futuras pruebas
-# Implementación
+
+ # Implementación
 ## Tecnologías utilizadas
 
 Las tecnologías utilizadas en MOPYGO son las siguientes:
-### GoHugo
+### **GoHugo**
 
 **GoHugo** es un framework para creación de sitios web de propósito general, además de ser generadores de sitios 
 estáticos. 
 
-### MongoDB
+### **MongoDB**
 
-El **MongoDB** es un sistema de base de datos NoSQL, orientado a documentos y de código abierto
+El **MongoDB** es un sistema de base de datos NoSQL, orientado a documentos y de código abierto.
 
-
-- Herramientas utilizadas
-
-Las herramientas utilizadas en MOPYGO son las siguientes:
-
-### GitHub
+### **GitHub**
 
 El **GitHub** es una forja para alojar proyectos utilizando el sistema de control de versiones Git. Lo hemos
 utilizado esta plataforma para almacenar nuestro proyecto en la nube y además hemos utilizado la rama de github
 pages para hostear nuestra web en la red.
 
-### Python
+### **Python**
 
 Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.​ Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional.
 
-## Herramientas utilizadas
+## **Herramientas utilizadas**
 Las herramientas utilizadas en MOPYGO son las siguientes:
 
-### VsCode
+### **VsCode**
 
 El **VsCode** es un editor de código fuente (IDE) utilizado para desarrollar el código fuente. El cual podemos 
 usar las erramientas como conventional commits, live Share, git graph, Python.
 
-### Clockify
+### **Clockify**
 
 El **Clockify** es una aplicación simple de seguimiento del tiempo y planilla de horarios que permiten tanto 
 al usuario como a un equipo de trabajorealizar el seguimiento de las horas trabajadas en los proyectos. 
 
-### Git
+### **Git**
 
 El **Git** es un software de control de versiones. En nuestro caso hemos utilizado Git como sistema de versionado
 de código para compartir y trabajar sobre nuestra aplicación y para mantener un registro de los cambios realizados.
 
-### Black 
+### **Black** 
 _Black_ es un formateador obstinado que cumple con los requisitos impuestos en [PEP 8](https://www.python.org/dev/peps/pep-0008/). _Black_ reformatea archivos completos en su lugar. Las opciones de configuración de estilo están deliberadamente limitadas y rara vez se agregan. No tiene en cuenta el formato anterior.
 
-### Coverage 
+### **Coverage** 
 _Coverage_ es una herramienta para medir la cobertura de código de los programas Python. Supervisa su programa, observa qué partes del código se han ejecutado, luego analiza la fuente para identificar el código que podría haberse ejecutado pero no lo ha sido.
 
 La medición de cobertura se usa generalmente para medir la efectividad de las pruebas. Puede mostrar qué partes de su código están siendo ejercitadas por pruebas y cuáles no.
-## BackEnd 
+## BackEnd
 
-El backEnd son todas las tecnologías que se encuentran en la cara oculta al usuario, el servidor, en el que podemos encontrar (que esta explicado anteriormente):
-- [MongoAtlas](#MongoDB)
-- [Python](#Python)
-- [Hugo](#GoHugo)
+El backEnd son todas las tecnologías que se encuentran en la cara oculta al usuario, el servidor.
 
-<!-- ## CRUD -->
+### [MongoAtlas](#MongoDB)
+<!-- explicarción de que hemos hecho -->
+### [Python](#Python)
+<!-- explicarción de que hemos hecho -->
+### [Hugo](#GoHugo)
+<!-- explicarción de que hemos hecho -->
+
+## CRUD: 
+
+<!-- como aplicamos crud y como se puede ver en nuestro proyecto o como se hace -->
 ## FrontEnd
-
+<!-- # explicarción de que hemos hecho de cada uno -->
 Todas las tecnoloías que se encuentran a la vista del usuario, el cliente:
-- HTML
-- CSS
-- JS (Booststrap, jQuery, owl, masonry)
+### HTML
+<!-- explicarción de que hemos hecho -->
+### CSS
+<!-- explicarción de que hemos hecho -->
+### JS (Booststrap, jQuery, owl, masonry)
+<!-- explicarción de que hemos hecho -->
 # Pruebas
 ## TDD
+<!-- # lo mismo que el crud  3/4 -->
 <!--
 1. Coger los casos test de la carpeta /tests
 2. Poner el código, explicar el motivo de ese caso test
@@ -278,6 +282,7 @@ Para hacer CRUD usaremos los siguientes datos que encontramos a continuación.
     "image": "americanoPollo.jpeg"
 }
 ```
+### Validadión de esquema
 
 1. Buscaremos la colección para comprobar que no existen esos datos.
 ```
@@ -297,46 +302,54 @@ db.american.find({name:"Regina Caterers"})
 ```
 ![](assets/find2.png)
 
-4. Insertar docuemnto erroneo.
-``` 
-db.american.insertOne({name:"Regina Caterers", ...})
-```
-![](assets/Errorinsert.png)
-
-5. Actualizar el documento.
+4. Actualizar el documento.
 ```
 db.american.update({name:"Regina Caterers"}, {$set: {price:400}})
 ```
 ![](assets/update.png)
 
-6. Comprobar que el documento se han actuailzado.  
+5. Comprobar que el documento se han actuailzado.  
 ```
 db.american.find({name:"Regina Caterers"})
 ```
 ![](assets/update_fin.png)
 
-7. Actualizar el documento de forma erronea. 
-```
-db.american.update({name:"Regina Caterers"}, {$set: {price:"400"}})
-```
-![](assets/update_error.png)
-
-8. Borrar el documento.
+6. Borrar el documento.
 ```
 db.american.deleteOne({name:"Regina Caterers"})
 ```
 ![](assets/delete.png)
 
-9. Comprobar que se ha eliminado el documento.
+7. Comprobar que se ha eliminado el documento.
 ```
 db.american.find({name:"Regina Caterers"})
 ```
 ![](assets/find1.png)
 
+### Mensaje de error:
+
+1. Insertar docuemnto erroneo.
+``` 
+db.american.insertOne({name:"Regina Caterers", ...})
+```
+![](assets/Errorinsert.png)
+
+2. Actualizar el documento de forma erronea. 
+```
+db.american.update({name:"Regina Caterers"}, {$set: {price:"400"}})
+```
+![](assets/update_error.png)
+
 # Comparación temporal 
 
-- Estimación inicial por tases o detallado por tereas
-- Estimación real -> clockity
+<figure>
+  <img src="assets/Clockify1.jpg">
+  <figcaption>
+    <h6><i>Diagrama circular de las horas invertidas</i></h6>
+  </figcaption>
+</figure>
+
+
 
 En este proyecto hemos invertido un total de 159 horas en el cual por ambas partes de las personas implicadas en el proyecto (Noeila y Bruno) han hecho las mismas horas mutuamente.
 
@@ -349,21 +362,34 @@ En tercer lugar tenemos la etiqueta _Plan proyecto_ la cual hace referencia a la
 Lás demás etiquetas, como _Lenguajes de marcas_, _Varios_ y _Bases de datos_ tienen menos horas invertidas debido a su baja complejidad en cuanto al proyecto.
 
 <figure>
-  <img src="assets/Clockify1.jpg">
-  <figcaption>
-    <h6><i>Diagrama circular de las horas invertidas</i></h6>
-  </figcaption>
-</figure>
-
-<figure>
   <img src="assets/Summary.jpg">
   <figcaption>
     <h6><i>Resumen horas diarias del 18/11/21 a 19/12/21</i></h6>
   </figcaption>
 </figure>
 
-- Comparación temporal
+<figure>
+  <img src="assets/Horas.svg">
+  <figcaption>
+    <h6><i>Grafico comparativo entre horas previstas y las horas realizadas</i></h6>
+  </figcaption>
+</figure>
 
+| Etiqueta | Horas calculadas | Horas reales |
+| - | - | - |
+| BB.DD. | 10 | 12,15 |
+| LL.MM. | 20 | 27,64 |
+| Programación | 25 | 31,58 |
+| E.D. | 20 | 34,36 |
+| Plan proyecto | 24 | 28,14 |
+| Varios | 0 | 24,04 |
+| Total | 99 | 157,84 |
+
+Como podemos ver en el gráfico de arriba (Grafico comparativo entre horas previstas y las horas realizadas) a rasgos generales estimamos una duración _Total_ de 99 horas para este proyecto la cual nos hemos sobrepasando unas 58h. 
+
+Como podemos observar en _Base de datos_ la diferencia es poca, solo nos hemos sobrepasado de 2 horas en cambio en _Lenguaje de marcas_ nos hemos excedido de 7 aproximadamente. Respecto a _Programación_ nos hemos pasado de 6 horas y en el partado _Plan proyecto_ solo nos hemos pasdo de 4 horas.
+
+Sin embargo en _Entornos de desarroyo_ ni el apartado _Varios_ pensabamos que iba a demorar tanto la tarea haciendo que en entornos nos pasaramos de 34 horas aproximadamente y en varios de 24 horas por lo que no calculamos bien la magnitud del trabajo que se requería.
 # Dificultades
 
 Las principales dificultades que hemos tenido han sido las siguientes:
@@ -383,3 +409,17 @@ Una de las posibles mejoras que nos gustaría implementar en este proyecto debid
 Actualmente solamente encontramos un formulario de ingreso de datos hecho con _Google Forms_ y nos gustaría retirarlo y sustituirlo por un formulario hecho por nosotros en HTML, además de implementar una _RestAPI_ con la que poder interaccionar con la base de datos.
 
 # Bibliografía
+
+[Documento repte vevops CI/CD](https://docs.google.com/document/d/1qA-qOmxmJfzvVzHCmmv_wPQ2p5U8GA0Xu0w9rMpxbSM/edit?usp=sharing)
+
+Scrum:
+
+- [Scrum de “Wikipedia”](https://es.wikipedia.org/wiki/Scrum_(desarrollo_de_software))
+- [Metodolgia Scrum de “Softeng”](https://www.softeng.es/ca-es/empresa/metodologies-de-treball/metodologia-scrum.html)
+- [Scrum de “Atlassian”](https://www.atlassian.com/es/agile/scrum)
+- [Ventajas y desventajas Scrum de "Waredrew"](https://blog.wearedrew.co/ventajas-y-desventajas-de-la-metodologia-scrum)
+
+
+Hugo:
+
+- [Introducción de hugo](https://gohugo.io/getting-started/quick-start/)
