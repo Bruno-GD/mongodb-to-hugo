@@ -265,6 +265,8 @@ En este caso test haciamos las pruebas de inserción de datos de forma manual en
 En el [primer test](../test/test_db_data.py#L17-L43), se puede observar el uso de la función `putDataIntoCollection` la cual se conecta a la base de datos y introduce los datos en una colección.
 
 En el [segundo test](../test/test_db_data.py#L47-L77), realizamos primero la recolección de los datos extraídos de los archivos _JSON_ guardados en la carpeta _mocks_ y son introducidos en la base de datos con el uso de la función anterior `putDataIntoCollection`.
+![](assets/test_db_data.png)
+
 
 ### [Caso test conexión BBDD](../test/test_db_connection.py)
 En este caso test intentamos conectarnos a la base de datos con el uso de un URI obtenido de _MongoAtlas_.
@@ -272,6 +274,7 @@ En este caso test intentamos conectarnos a la base de datos con el uso de un URI
 En el [primer test](../test/test_db_connection.py#L8-L12), con el uso de la función `getDataFromDB` intentamos conectarnos a la BBDD y obtener los datos de las colecciones.
 
 En el [segundo test](../test/test_db_connection.py#L16-L24), usando la función ya mencionada intentamos conectarnos a la BBDD usando un URI inválido y así comprobar que la función procede como debería.
+![](assets/test_db_connection.png)
 
 ### [Caso test creación estructura Hugo](../test/test_create_structure.py)
 En este caso test ejecutamos la función `createHugoStructure` para crear la estructura de directorios que establecía la documentación de _Hugo_.
@@ -292,6 +295,7 @@ En este caso test haremos uso de la función `scrapSpreadsheet` que nos permitir
 
 En el [único test](../test/test_ss_scrapper.py#L12-L16), ejecutamos la función para extraer los datos del _Google Spreadsheet_ con el uso de las APIs de Google. Esta función recoge las credenciales de acceso y le indicamos un ID de hoja (generado por Google) y el rango (establecido por nosotros) que queremos capturar.
 En este test queremos comprobar que la conexión a la API y el rango funciona como es debido y no hay ninguna excepción no controlada, además mostraremos por la salida de consola los datos del Excel.
+![](assets/test_ss_scrapper.png)
 ## CRUD
 
 Para hacer CRUD usaremos los siguientes datos que encontramos a continuación. 
