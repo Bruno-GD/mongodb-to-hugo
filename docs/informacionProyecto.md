@@ -244,11 +244,18 @@ _Hugo_ ha sido nuestra principal herramienta para generar el contenido del _site
 ## FrontEnd
 <!-- # explicarción de que hemos hecho de cada uno -->
 Todas las tecnoloías que se encuentran a la vista del usuario, el cliente:
-### HTML
-<!-- explicarción de que hemos hecho -->
-### CSS
-<!-- explicarción de que hemos hecho -->
-### JS (Booststrap, jQuery, owl, masonry)
+### Bootstrap
+**Bootstrap** es una biblioteca multiplataforma o conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web.
+
+En nuestro caso ha sido utilizado para que la plantilla, y la web, tengan un contenido _responsive_ (que sea compatible con todos los dispositivos) y facilitar el trabajo de diseño de interfaz.
+### jQuery
+**jQuery** es una biblioteca multiplataforma de JavaScript, que permite simplificar la manera de interactuar con los documentos HTML, manipular el árbol DOM, manejar eventos, desarrollar animaciones y agregar interacción con la técnica AJAX a páginas web.​
+
+Para este proyecto ha sido utilizado junto con _Bootstrap_ para añadir ciertas animaciones a la hora de visualizar el sitio y tener un diseño más moderno y actual.
+### owl.js
+**Owl Carousel** es un plugin adicional para _jQuery_ que permite crear colecciones de imagenes con un diseño moderno y animado.
+### masonry.js
+**Masonry** es una librería JavaScript para crear rejillas en el sitio web, de forma óptima coloca elementos en el espacio vertical disponible, como si de un muro de piedras se tratase.
 <!-- explicarción de que hemos hecho -->
 # Pruebas
 ## TDD
