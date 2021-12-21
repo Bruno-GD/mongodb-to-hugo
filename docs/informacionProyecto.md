@@ -232,11 +232,11 @@ La medición de cobertura se usa generalmente para medir la efectividad de las p
 El backEnd son todas las tecnologías que se encuentran en la cara oculta al usuario, el servidor.
 
 ### [MongoAtlas](#MongoDB)
-<!-- explicarción de que hemos hecho -->
+Para este proyecto hemos utilizado _MongoAtlas_, que es un servicio en la nube para gestionar bases de datos con la tecnología MongoDB, el cual ha sido impuesto por el _product manager_ del proyecto. Este sistema de base de datos se ha utilizado para poder almacenar todos los datos que deberán ser procesados y mostrados en el _site_ generado por _Hugo_.
 ### [Python](#Python)
-<!-- explicarción de que hemos hecho -->
+El principal lenguaje de programación utilizado en este proyecto ha sido _Python_, impuesto por el _product manager_, ya que es un lenguaje multiplataforma y muy flexible a la hora de crear proyectos sencillos, además de permitir una gran escalabilidad. En nuestro caso hemos utilizado este lenguaje para realizar las consultas a _MongoAtlas_ y procesar los datos para convertirlos en contenido visual para el _site_ generado más adelante por _Hugo_, esto también nos permite automatizar la tarea con tecnologías como _Docker_ y _Kubernetes_.
 ### [Hugo](#GoHugo)
-<!-- explicarción de que hemos hecho -->
+_Hugo_ ha sido nuestra principal herramienta para generar el contenido del _site_ en HTML, CSS y JS. Este también impuesto por el _product manager_, nos facilita el trabajo de convertir archivos _Markdown_ a un contenido que cualquier navegador podría mostrar y cualquier servidor web como _nginx_ o _Apache_ aceptaría estos archivos generados.
 
 ## CRUD: 
 
