@@ -7,15 +7,15 @@
 - [Tecnologías utilizadas](#Tecnologías_utilizadas)
 - [Diagrama de componentes](#Diagrama_de_componentes)
 - [Estructura de base de datos](#Estructura_de_base_de_datos)
-- [Diagrama de tiempo del poryecto](#Diagrama_de_tiempo_del_poryecto)
+- [Diagrama de tiempo del proyecto](#Diagrama_de_tiempo_del_proyecto)
 
 # Introducción
 
-En este proyecto tendremos que actualizar una web de una empresa de menus de restaurantes de lujo. La página web contine listas de cartas de restaurentes (ítems) que están en stock, en las cuales estas se clasifican en diferentes estilo de cocina.
+En este proyecto tendremos que actualizar una web de una empresa de menús de restaurantes de lujo. La página web contiene listas de cartas de restaurantes (ítems) que están en stock, en las cuales estas se clasifican en diferentes estilos de cocina.
 
-El objetivo es implementar un sistema de integración y entrega contínua (CI/CD), y a traves de python se desarrollará una aplicación para poder extraer los datos de MongoAtlas.
+El objetivo es implementar un sistema de integración y entrega continua (CI/CD), y a través de Python se desarrollará una aplicación para poder extraer los datos de MongoAtlas.
 
-Por otra parte se tranformará los documentos JSON a un ficheros Markdown a traves de una aplicación de Python. A continuación esos ficheros se tienen que meter en una estructura de directorio que establece el generador de sitios estáticos llamado "Hugo" a traves de otra aplicacón de Python. "Hugo" leerá los ficheros Markdown y los transformará en documentos HTML que previamente los usaremos para la "nueva web". Finalmnte se creará el CSS.
+Por otra parte, se tranformará los documentos JSON a un ficheros Markdown a través de una aplicación de Python. A continuación esos ficheros se tienen que meter en una estructura de directorio que establece el generador de sitios estáticos llamado "Hugo" a través de otra aplicación de Python. "Hugo" leerá los ficheros Markdown y los transformará en documentos HTML que previamente los usaremos para la "nueva web". Finalmente se creará el CSS.
 
 EL objetivo de este proyecto es facilitar al comprador y cada vez que se añade, se actualice o se elimine ítem de la base de datos de forma automática con la nueva información actualizada sin necesidad de acceder al Wordpress.
 
@@ -24,7 +24,7 @@ Requisitos:
 - El sistema se tiene que desplegar de manera automática mediante Docker.
 - Incrementar un sistema workflow en git.
 - Aplicar el método SOLID.
-- Documentar el manual técnico que descrbe la arquitectura de la aplicación.
+- Documentar el manual técnico que describe la arquitectura de la aplicación.
 
 
 # Arquitectura de la aplicación
@@ -51,7 +51,7 @@ Las herramientas utilizadas en MOPYGO son las siguientes:
 ### VsCode
 
 El **VsCode** es un editor de código fuente (IDE) utilizado para desarrollar el código fuente. El cual podemos 
-usar las erramientas como conventional commits, live Share, git graph, Python.
+usar las herramientas como conventional commits, live Share, git graph, Python.
 
 ### Git
 
@@ -61,7 +61,7 @@ de código para compartir y trabajar sobre nuestra aplicación y para mantener u
 ### Clockify
 
 El **Clockify** es una aplicación simple de seguimiento del tiempo y planilla de horarios que permiten tanto 
-al usuario como a un equipo de trabajorealizar el seguimiento de las horas trabajadas en los proyectos. 
+al usuario como a un equipo de trabajo realizar el seguimiento de las horas trabajadas en los proyectos. 
 
 ### GitHub
 
@@ -79,8 +79,8 @@ pages para hostear nuestra web en la red.
 
 # Estructura de base de datos
 
-Cada coleccion es un tipo de restaurante, dentro de ella está la listas de los restaurentes.
-En cada documento sigue una estructura con los datos del restaurantes como por ejemplo el nombre del
+Cada colección es un tipo de restaurante, dentro de ella está la lista de los restaurantes.
+En cada documento sigue una estructura con los datos del restaurante como por ejemplo el nombre del
 restaurante, la ubicación, la capacidad del local.
 
 ```json
@@ -150,14 +150,14 @@ restaurante, la ubicación, la capacidad del local.
 <!-- # Conclusiones.
 a. Posibles mejoras.
 
-- Mejorar y apliar la página web. 
+- Mejorar y aplicar la página web. 
 - Volver a refactorizar el código.
 - Cambiar el tipo de formulario a uno de html
 
 
 b. Principales dificultades encontradas.
 
-- No sabiamos la tecnología hugo y hemos tenido que invertir más horas de las que pensabamos.
-- A medida que se iba acercando la hora de entrgar el proyecto se iba incrementando más información que al.
+- No sabíamos la tecnología Hugo y hemos tenido que invertir más horas de las que pensábamos.
+- A medida que se iba acercando la hora de entregar el proyecto se iba incrementando más información que al.
 - El tiempo a sido muy justo por la magnitud del proyecto.
 - Hugo dejo de funcionar de repente. 
