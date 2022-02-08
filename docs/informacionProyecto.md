@@ -4,11 +4,11 @@
 # Índice
 - [Introducción](#Introducción)
 - [Metodología](#Metodología) 
-- [Analisis](#Analisis)
+- [Análisis](#Análisis)
   - [Primer diagrama general](#Primer-diagrama-general)
   - [Posibles tecnologías](#Posibles-tecnologías)
 - [Diseño](#Diseño)
-  - [Diagrama de componenetes](#Diagrama-de-componenetes)
+  - [Diagrama de componentes](#Diagrama-de-componentes)
   - [Esquema BBDD](#Esquema-BBDD)
 - [Implementación](#Implementación)
   - [Tecnologias utilizadas](#Tecnologias-utilizadas)
@@ -27,11 +27,11 @@
 
 # Introducción
 
-En este proyecto tendremos que actualizar una web de una empresa de menus de restaurantes de lujo. La página web contine listas de cartas de restaurentes (ítems) que están en stock, en las cuales estas se clasifican en diferentes estilo de cocina.
+En este proyecto tendremos que actualizar una web de una empresa de menús de restaurantes de lujo. La página web contiene listas de cartas de restaurantes (ítems) que están en stock, en las cuales estas se clasifican en diferentes estilos de cocina.
 
-El objetivo es implementar un sistema de integración y entrega contínua (CI/CD), y a traves de python se desarrollará una aplicación para poder extraer los datos de MongoAtlas.
+El objetivo es implementar un sistema de integración y entrega continua (CI/CD), y a través de Python se desarrollará una aplicación para poder extraer los datos de MongoAtlas.
 
-Por otra parte se tranformará los documentos JSON a un ficheros Markdown a traves de una aplicación de Python. A continuación esos ficheros se tienen que meter en una estructura de directorio que establece el generador de sitios estáticos llamado "Hugo" a traves de otra aplicacón de Python. "Hugo" leerá los ficheros Markdown y los transformará en documentos HTML que previamente los usaremos para la "nueva web". Finalmnte se creará el CSS.
+Por otra parte, se tranformará los documentos JSON a un ficheros Markdown a través de una aplicación de Python. A continuación, esos ficheros se tienen que meter en una estructura de directorio que establece el generador de sitios estáticos llamado "Hugo" a través de otra aplicación de Python. "Hugo" leerá los ficheros Markdown y los transformará en documentos HTML que previamente los usaremos para la "nueva web". Finalmnte, se creará el CSS.
 
 EL objetivo de este proyecto es facilitar al comprador y cada vez que se añade, se actualice o se elimine ítem de la base de datos de forma automática con la nueva información actualizada sin necesidad de acceder al Wordpress.
 
@@ -39,7 +39,7 @@ Requisitos:
 - El sistema se tiene que desplegar de manera automática mediante Docker.
 - Incrementar un sistema _workflow_ en git.
 - Aplicar el método SOLID.
-- Documentar el manual técnico que descrbe la arquitectura de la aplicación. 
+- Documentar el manual técnico que describe la arquitectura de la aplicación. 
 
 # Metodología
 
@@ -56,15 +56,15 @@ El modelo permite una implementación con refinamientos sucesivos (ampliación y
 
 ![](assets/incremental.png)
 
-En definitiva este modelo es más flexible y rápido de usar. Además de reducir las propiedades de riesgo por lo que reduce tanto el coste de producción como el tiempo de creación. También es más fácil de probar y de depurar en una iteración más pequeña eso nos facilita detectar errores en porciones más pequeñas del código. Gracias a esto le permite al usuario utilizar el sistema antes de su puesta en producción ya que todas las piezas del mismo han sido probadas y funcionan.
+En definitiva, este modelo es más flexible y rápido de usar. Además de reducir las propiedades de riesgo por lo que reduce tanto el coste de producción como el tiempo de creación. También es más fácil de probar y de depurar en una iteración más pequeña eso nos facilita detectar errores en porciones más pequeñas del código. Gracias a esto le permite al usuario utilizar el sistema antes de su puesta en producción ya que todas las piezas del mismo han sido probadas y funcionan.
 
 No obstante, hay que tener en cuenta que se requiere una cierta experiencia y que las fases de iteraciones no se superponen por lo que no podemos reutilizar iteraciones, creando así un aumento considerable del código. Así mismo hay que considerar que este método puede ocasionar problemas de la arquitectura.
 
-En conclusión dependiendo de la finalidad de cada proyecto nos puede beneficiar este método ya que es más rápido, flexible y no hay que olvidar que reduce el coste de producción.
+En conclusión, dependiendo de la finalidad de cada proyecto nos puede beneficiar este método ya que es más rápido, flexible y no hay que olvidar que reduce el coste de producción.
 
 
 
-Además nos hemos apoyado con el scrum. En ella se basa en en la teoría de control de procesos empírica o empirismo. El empirismo asegura que el conocimiento procede de la experiencia y de tomar decisiones basándose en lo que se conoce. Scrum emplea un enfoque iterativo e incremental para optimizar la predictibilidad y el control del riesgo. Los aspectos significativos del proceso deben ser visibles para aquellos que son responsables del resultado. La transparencia requiere que dichos aspectos sean definidos por un estándar común, de tal modo que los observadores compartan un entendimiento común de lo que se está viendo.
+Además, nos hemos apoyado con el scrum. En ella se basa en la teoría de control de procesos empírica o empirismo. El empirismo asegura que el conocimiento procede de la experiencia y de tomar decisiones basándose en lo que se conoce. Scrum emplea un enfoque iterativo e incremental para optimizar la predictibilidad y el control del riesgo. Los aspectos significativos del proceso deben ser visibles para aquellos que son responsables del resultado. La transparencia requiere que dichos aspectos sean definidos por un estándar común, de tal modo que los observadores compartan un entendimiento común de lo que se está viendo.
 
 Esta metodología está formada por 5 etapas que son:
 1. Inicio
@@ -75,8 +75,9 @@ Esta metodología está formada por 5 etapas que son:
 
 ![](assets/principios_Metodologia_Scrum.png)
 
-Para finalizar podemos decir que Scrum es una metodología ágil que hace énfasis en el trabajo en equipo donde la claridad de los objetivos es crucial para avanzar hacia una versión cada vez mejor. Desde el punto de vista humano, favorece la motivación, la creatividad y el compromiso del equipo de trabajo. La claridad de los objetivos de cada una de las tareas programadas, así como el registro diario de las novedades, son factores que generan propuestas de avance hacia una versión mejorada. Estos factores, por supuesto, se reflejan positivamente en los niveles de producción de la empresa. Sin embargo el scrum no es muy efectivo si se hacen con grupos muy ampliados ya que se puede ir de las manos y tardar más de lo necesario. A eso, también, hay que añadirle que se tiene que trabajar con metas por días o semanales o mensuales y por etapas para poder llegar a los plazos y eso se necesita mucha organización. Asimismo es importante que las personas que hagan esta metodología tengan un gran nivel de cualificación para poder realizarla correctamente. En definitiva, el scrum si se hace bien es muy efectivo pero requiere un alto nivel de implicación.
-# Analisis
+Para finalizar podemos decir que Scrum es una metodología ágil que hace énfasis en el trabajo en equipo donde la claridad de los objetivos es crucial para avanzar hacia una versión cada vez mejor. Desde el punto de vista humano, favorece la motivación, la creatividad y el compromiso del equipo de trabajo. La claridad de los objetivos de cada una de las tareas programadas, así como el registro diario de las novedades, son factores que generan propuestas de avance hacia una versión mejorada. Estos factores, por supuesto, se reflejan positivamente en los niveles de producción de la empresa. Sin embargo, el scrum no es muy efectivo si se hacen con grupos muy ampliados ya que se puede ir de las manos y tardar más de lo necesario. A eso, también, hay que añadirle que se tiene que trabajar con metas por días o semanales o mensuales y por etapas para poder llegar a los plazos y eso se necesita mucha organización. Asimismo, es importante que las personas que hagan esta metodología tengan un gran nivel de cualificación para poder realizarla correctamente. En definitiva, el scrum si se hace bien es muy efectivo pero requiere un alto nivel de implicación.
+
+# Análisis
 
 ## Primer diagrama general
 
@@ -92,7 +93,7 @@ Finalmente entramos en el entorno cliente donde encontramos una capa de presenta
 
 ## Posibles tecnologías
 
-| Tecnologias | _workflow_ | BBDD | Generador web con MD |
+| Tecnologías | _workflow_ | BBDD | Generador web con MD |
 |-| - | - | - |
 | GoHugo | - | - | ✅ |  
 | MongoDB |  - | ✅ | - |
@@ -100,25 +101,25 @@ Finalmente entramos en el entorno cliente donde encontramos una capa de presenta
 
 # Diseño
 
-## Diagrama de componenetes
+## Diagrama de componentes
 
 ![](assets/diagramaComponentes.png)
 
-Este proyecto se compone de un archivo principal llamado _mopygo_. En este se acccede a múltiples funciones que son llamadas a cada una de ellas (`scrapSpreadsheet`, `putDataIntoCollection`, `clearSpreadsheet`, `getDataFromDB`, `generateSite`).
+Este proyecto se compone de un archivo principal llamado _mopygo_. En este se accede a múltiples funciones que son llamadas a cada una de ellas (`scrapSpreadsheet`, `putDataIntoCollection`, `clearSpreadsheet`, `getDataFromDB`, `generateSite`).
 
-La función `scrapSpreadsheet` recoge los datos excritos en un excel de Google Drive el cual llama al procedimeinto `checkCredentials` que comprueba que las credenciales de google son validas. 
+La función `scrapSpreadsheet` recoge los datos escritos en un Excel de Google Drive el cual llama al procedimiento `checkCredentials` que comprueba que las credenciales de google son validas. 
 
 La función `putDataIntoCollection` mete los datos en l base de datos. 
 
-El procedimiento `clearSpreadsheet`limpa el excel y accede al procedimiento `checkCredentials` que comprueba que las credenciales de google son validas.
+El procedimiento `clearSpreadsheet`limpa el Excel y accede al procedimiento `checkCredentials` que comprueba que las credenciales de google son validas.
 
 La función `getDataFromDB`saca los datos de la base de datos. 
 
-El procedimiento `generateSite` genera los Markdown para hugo haciendo uso de tres procedimientos llamados `clearHugoContent`(limpiar la carpeta de contenido Hugo), `createHugoStructure`(crea la estructura de directorio de hugo, para ello, comprueba si existe el comando de hugo (`isHugoAvailable`) y en el caso que exista lo ejecuta (`startHugoSite`)) y  `populateContents`(puebla la carpeta de contenidocon archivos Markdown).
+El procedimiento `generateSite` genera los Markdown para Hugo haciendo uso de tres procedimientos llamados `clearHugoContent`(limpiar la carpeta de contenido Hugo), `createHugoStructure`(crea la estructura de directorio de Hugo, para ello, comprueba si existe el comando de Hugo (`isHugoAvailable`) y en el caso que exista lo ejecuta (`startHugoSite`)) y  `populateContents`(puebla la carpeta de contenido con archivos Markdown).
 
 # Esquema BBDD
 
-El esquema de la base de datos es organizado de la siguiente forma, cada colección es un tipo de restaurante, dentro de ella está la listas de los restaurantes. En cada documento sigue una estructura con los datos del restaurantes como por ejemplo el nombre del restaurante, la ubicación, la capacidad del local.
+El esquema de la base de datos es organizado de la siguiente forma, cada colección es un tipo de restaurante, dentro de ella está las listas de los restaurantes. En cada documento sigue una estructura con los datos del restaurante como por ejemplo el nombre del restaurante, la ubicación, la capacidad del local.
 
 También tenemos una colección llamada `types` la cual contiene el nombre y la descripción del tipo de restaurante, el nombre hace referencia a una colección existente.
 
@@ -208,12 +209,12 @@ Las herramientas utilizadas en MOPYGO son las siguientes:
 ### **VsCode**
 
 El **VsCode** es un editor de código fuente (IDE) utilizado para desarrollar el código fuente. El cual podemos 
-usar las erramientas como conventional commits, live Share, git graph, Python.
+usar las herramientas como conventional commits, live Share, git graph, Python.
 
 ### **Clockify**
 
 El **Clockify** es una aplicación simple de seguimiento del tiempo y planilla de horarios que permiten tanto 
-al usuario como a un equipo de trabajorealizar el seguimiento de las horas trabajadas en los proyectos. 
+al usuario como a un equipo de trabajo a realizar el seguimiento de las horas trabajadas en los proyectos. 
 
 ### **Git**
 
@@ -224,7 +225,7 @@ de código para compartir y trabajar sobre nuestra aplicación y para mantener u
 _Black_ es un formateador obstinado que cumple con los requisitos impuestos en [PEP 8](https://www.python.org/dev/peps/pep-0008/). _Black_ reformatea archivos completos en su lugar. Las opciones de configuración de estilo están deliberadamente limitadas y rara vez se agregan. No tiene en cuenta el formato anterior.
 
 ### **Coverage** 
-_Coverage_ es una herramienta para medir la cobertura de código de los programas Python. Supervisa su programa, observa qué partes del código se han ejecutado, luego analiza la fuente para identificar el código que podría haberse ejecutado pero no lo ha sido.
+_Coverage_ es una herramienta para medir la cobertura de código de los programas Python. Supervisa su programa, observa qué partes del código se han ejecutado, luego analiza la fuente para identificar el código que podría haberse ejecutado, pero no lo ha sido.
 
 La medición de cobertura se usa generalmente para medir la efectividad de las pruebas. Puede mostrar qué partes de su código están siendo ejercitadas por pruebas y cuáles no.
 ## BackEnd
@@ -238,12 +239,10 @@ El principal lenguaje de programación utilizado en este proyecto ha sido _Pytho
 ### [Hugo](#GoHugo)
 _Hugo_ ha sido nuestra principal herramienta para generar el contenido del _site_ en HTML, CSS y JS. Este también impuesto por el _product manager_, nos facilita el trabajo de convertir archivos _Markdown_ a un contenido que cualquier navegador podría mostrar y cualquier servidor web como _nginx_ o _Apache_ aceptaría estos archivos generados.
 
-## CRUD: 
 
-<!-- como aplicamos crud y como se puede ver en nuestro proyecto o como se hace -->
 ## FrontEnd
-<!-- # explicarción de que hemos hecho de cada uno -->
-Todas las tecnoloías que se encuentran a la vista del usuario, el cliente:
+<!-- # explicación de que hemos hecho de cada uno -->
+Todas las tecnologías que se encuentran a la vista del usuario, el cliente:
 ### Bootstrap
 **Bootstrap** es una biblioteca multiplataforma o conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web.
 
@@ -253,10 +252,10 @@ En nuestro caso ha sido utilizado para que la plantilla, y la web, tengan un con
 
 Para este proyecto ha sido utilizado junto con _Bootstrap_ para añadir ciertas animaciones a la hora de visualizar el sitio y tener un diseño más moderno y actual.
 ### owl.js
-**Owl Carousel** es un plugin adicional para _jQuery_ que permite crear colecciones de imagenes con un diseño moderno y animado.
+**Owl Carousel** es un plugin adicional para _jQuery_ que permite crear colecciones de imágenes con un diseño moderno y animado.
 ### masonry.js
 **Masonry** es una librería JavaScript para crear rejillas en el sitio web, de forma óptima coloca elementos en el espacio vertical disponible, como si de un muro de piedras se tratase.
-<!-- explicarción de que hemos hecho -->
+<!-- explicación de que hemos hecho -->
 # Pruebas
 ## TDD
 ### [Caso test introducción de datos](../test/test_db_data.py)
@@ -393,11 +392,11 @@ En este proyecto hemos invertido un total de 159 horas en el cual por ambas part
 
 En el siguiente diagrama circular podemos observar las horas invertidas por etiqueta (módulos de clase), en él podemos observar que donde más horas se han invertido es en _Entornos de Desarrollo_ debido a la gran documentación que se ha solicitado.
 
-La segunda etiqueta con más horas invertidas es _Programación_ como era de esperar, debido a que el proyecto se centraba principalmente en la aprendizaje de Python.
+La segunda etiqueta con más horas invertidas es _Programación_ como era de esperar, debido a que el proyecto se centraba principalmente en el aprendizaje de Python.
 
-En tercer lugar tenemos la etiqueta _Plan proyecto_ la cual hace referencia a las horas invertidas en cómo se llevaría acabo el proyecto.
+En tercer, lugar tenemos la etiqueta _Plan proyecto_ la cual hace referencia a las horas invertidas en cómo se llevaría acabo el proyecto.
 
-Lás demás etiquetas, como _Lenguajes de marcas_, _Varios_ y _Bases de datos_ tienen menos horas invertidas debido a su baja complejidad en cuanto al proyecto.
+Las demás etiquetas, como _Lenguajes de marcas_, _Varios_ y _Bases de datos_ tienen menos horas invertidas debido a su baja complejidad en cuanto al proyecto.
 
 <figure>
   <img src="assets/Summary.jpg">
@@ -425,20 +424,20 @@ Lás demás etiquetas, como _Lenguajes de marcas_, _Varios_ y _Bases de datos_ t
 
 Como podemos ver en el gráfico de arriba (Grafico comparativo entre horas previstas y las horas realizadas) a rasgos generales estimamos una duración _Total_ de 99 horas para este proyecto la cual nos hemos sobrepasando unas 58h. 
 
-Como podemos observar en _Base de datos_ la diferencia es poca, solo nos hemos sobrepasado de 2 horas en cambio en _Lenguaje de marcas_ nos hemos excedido de 7 aproximadamente. Respecto a _Programación_ nos hemos pasado de 6 horas y en el partado _Plan proyecto_ solo nos hemos pasdo de 4 horas.
+Como podemos observar en _Base de datos_ la diferencia es poca, solo nos hemos sobrepasado de 2 horas en cambio en _Lenguaje de marcas_ nos hemos excedido de 7 aproximadamente. Respecto a _Programación_ nos hemos pasado de 6 horas y en el apartado _Plan proyecto_ solo nos hemos pasado de 4 horas.
 
-Sin embargo en _Entornos de desarroyo_ ni el apartado _Varios_ pensabamos que iba a demorar tanto la tarea haciendo que en entornos nos pasaramos de 34 horas aproximadamente y en varios de 24 horas por lo que no calculamos bien la magnitud del trabajo que se requería.
+Sin embargo, en _Entornos de desarrollo_ ni el apartado _Varios_ pensábamos que iba a demorar tanto la tarea haciendo que en entornos nos pasáramos de 34 horas aproximadamente y en varios de 24 horas por lo que no calculamos bien la magnitud del trabajo que se requería.
 # Dificultades
 
 Las principales dificultades que hemos tenido han sido las siguientes:
 
 En primer, lugar al no conocer la tecnología de Hugo, por lo que nos hemos tenido que documentar bastante sobre el y saber que capacidades o que cosas puede llegar a hacer este framework. Por lo que tuvimos que invertir más horas de las programadas para poder llevar a cabo los requisitos para este proyecto. 
 
-En segundo lugar, Hugo nos ha estado dando problemas sobretodo en los dispositivos Windows y no sabias del porque. Incluso llegamos a desinstalar, volver a instalarlo y no obtuvimos ninguna respuesta. Finalmente tuvimos que cambiar el servidor web que ofrece Hugo y a partir de alli ya lo podiamos visualizar.
+En segundo lugar, Hugo nos ha estado dando problemas sobretodo en los dispositivos Windows y no sabias del por que. Incluso llegamos a desinstalar, volver a instalarlo y no obtuvimos ninguna respuesta. Finalmente tuvimos que cambiar el servidor web que ofrece Hugo y a partir de allí ya lo podíamos visualizar.
 
-En tercer lugar, a medida que el proyecto iba avanzando se iba incrementando el contenido hasta llegar al punto de que en el ultimo momento ha habido modificaciones y documentacion que incrementar. 
+En tercer lugar, a medida que el proyecto iba avanzando se iba incrementando el contenido hasta llegar al punto de que en el ultimo momento ha habido modificaciones y documentación que incrementar. 
 
-Finalmente, el tiempo ha sido el detonante de este proyecto pues a medida que iba avanzando el proyecto veiamos que era más grande de lo que nos imaginabamos. Además a eso hay que añadir que se añadian nuevas funcionalidades y modificaciones.
+Finalmente, el tiempo ha sido el detonante de este proyecto pues a medida que iba avanzando el proyecto veíamos que era más grande de lo que nos imaginábamos. Además, a eso hay que añadir que se añadían nuevas funcionalidades y modificaciones.
 
 # Futuras mejoras
 

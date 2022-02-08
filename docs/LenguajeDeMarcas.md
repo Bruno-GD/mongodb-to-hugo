@@ -20,20 +20,20 @@ Esta [plantilla/tema](../site/themes/main-template) tiene **HTML, en el que est�
 ### [_default](../site/themes/main-template/layouts/_default)
 - **[baseof](../site/themes/main-template/layouts/_default/baseof.html)** : es el archivo principal, en el cual se encuentran <!--CAMBIO (está indicado) --> las etiquetas `html`, `head` y `body`. A partir de este archivo `.html` se irá insertando el contenido correspondiente dentro de la etiqueta `body`.
 - **[list](../site/themes/main-template/layouts/_default/list.html)** : el archivo list será insertado en el `body` de _baseof_ siempre y cuando el apartado de la web que se está visualizando este listando el contenido, como podría ser _home_ o algún filtro respectivo a _home_.
-- **[single](../site/themes/main-template/layouts/_default/single.html)** : archivo que será insertado en el `body` de _baseof_ cuando el apartado que se visualiza es contenido único. En este proyecto el _about_ se encuentra el aprtado de restaurante y un formulario<!-- Cambiar En nuestro caso podría ser un restaurante, _about_ y el formulario. -->
+- **[single](../site/themes/main-template/layouts/_default/single.html)** : archivo que será insertado en el `body` de _baseof_ cuando el apartado que se visualiza es contenido único. En este proyecto el _about_ se encuentra el apartado de restaurante y un formulario<!-- Cambiar En nuestro caso podría ser un restaurante, _about_ y el formulario. -->
 
 ### [about](../site/themes/main-template/layouts/about)
-- **[list](../site/themes/main-template/layouts/about/list.html)** : en este caso el creador de la plantilla a preferido que _about_ tenga un contenido diferente a los demas _singles_ .
+- **[list](../site/themes/main-template/layouts/about/list.html)** : en este caso el creador de la plantilla a preferido que _about_ tenga un contenido diferente a los demás _singles_ .
 
 ### [contact](../site/themes/main-template/layouts/contact)
-- **[list](../site/themes/main-template/layouts/contact/list.html)** : en este caso el creador de la plantilla a preferido que _contact_ tenga un contenido diferente a los demas _singles_. En nuestro caso hemos modificado esta parte del _HTML_ para retirar el formulario de contacto y poner el **formulario de ingreso de datos**.
+- **[list](../site/themes/main-template/layouts/contact/list.html)** : en este caso el creador de la plantilla a preferido que _contact_ tenga un contenido diferente a los demás _singles_. En nuestro caso hemos modificado esta parte del _HTML_ para retirar el formulario de contacto y poner el **formulario de ingreso de datos**.
 
 ### [partials](../site/themes/main-template/layouts/partials)
-#### En partials podemos encontrar todas las particiones por separado para los diferentes apartados de la web, que pueden ser aplicados (de forma automágica por Hugo) en los diferentes _.html_ que hemos visto anteriormente.
+#### En partials podemos encontrar todas las particiones por separado para los diferentes apartados de la web, que pueden ser aplicados (de forma automática por Hugo) en los diferentes _.html_ que hemos visto anteriormente.
 
 - **[scripts](../site/themes/main-template/layouts/partials/scripts.html)**: este archivo contiene todas las etiquetas `script` que requiere la web para renderizar las animaciones, tales como _bootstrap_, _jQuery_, etc.
 - **[sidebar](../site/themes/main-template/layouts/partials/sidebar.html)**: en este archivo esta indicado todo el _HTML_ que se renderiza como **barra de navegación lateral** y que será aplicado en todos los _HTML_ en los que este indicado el mismo.
-- **[portfolio](../site/themes/main-template/layouts/partials/portfolio.html)**: este archivo es especificamente para los tipos _list_ descritos anteriormente en _\_default_, recoge todos los subapartados del directorio en el que se encuentra y genera una lista de cajas/botones en los que se puede hacer click para navegar entre los diferentes _singles_ del directorio.
+- **[portfolio](../site/themes/main-template/layouts/partials/portfolio.html)**: este archivo es específicamente para los tipos _list_ descritos anteriormente en _\_default_, recoge todos los subapartados del directorio en el que se encuentra y genera una lista de cajas/botones en los que se puede hacer click para navegar entre los diferentes _singles_ del directorio.
 - **[head](../site/themes/main-template/layouts/partials/head.html)** : en este archivo está indicado todas las etiquetas que deberán colocarse dentro de `head`, como por ejemplo el **título de la ventana** o el **css**.
 
 ## Modificaciones personales
@@ -46,7 +46,7 @@ Esta [plantilla/tema](../site/themes/main-template) tiene **HTML, en el que est�
 ![](assets/contact.jpg)
 
 
-- **[default.css](https://github.com/Bruno-GD/mopygo/commit/31635f947c85fe03d21b4fd5fd8b00d48aea9f57)** : en este commit modificamos una propiedad de las imagenes que se visualizan en las _lists_ de _singles_ ya que tenían un tamaño mínimo que no nos interesaba.
+- **[default.css](https://github.com/Bruno-GD/mopygo/commit/31635f947c85fe03d21b4fd5fd8b00d48aea9f57)** : en este commit modificamos una propiedad de las imágenes que se visualizan en las _lists_ de _singles_ ya que tenían un tamaño mínimo que no nos interesaba.
 ![](assets/default.jpg)
 
 
